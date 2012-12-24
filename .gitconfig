@@ -1,0 +1,15 @@
+[user]
+	email = akiomik@gmail.com
+    name = "Akiomi Kamakura"
+[color]
+	ui = auto 
+[merge]
+	ff = false
+[pull]
+	rebase = true
+[alias]
+	br = branch
+	ci = commit -a
+	co = checkout
+	st = status
+	up = pull
