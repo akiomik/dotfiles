@@ -1,0 +1,15 @@
+#! /bin/sh
+
+# get dotfiles list
+files=`ls -1Ap | grep "^\.[^./]\{1,\}$"`
+
+# create symlinks
+for file in $files; do
+	if [ -f "$HOME/$file" ]; then
+		continue
+	fi
+
+	echo "> create symlink to $HOME/$file"
+	ln -s $PWD/$file $HOME/$file
+done
+
