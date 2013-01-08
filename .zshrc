@@ -35,6 +35,7 @@ setopt auto_list
 setopt list_types
 setopt auto_menu
 zstyle ':completion:*:default' menu select=1
+compdef mosh=ssh
 
 
 # colors
@@ -172,3 +173,10 @@ bindkey -v '^E' vi-end-of-line
 # setopt no_beep
 # setopt hub
 # setopt nobgnice
+
+
+# for z
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+	z --add "$(pwd -P)"
+}
