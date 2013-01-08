@@ -7,7 +7,7 @@
 # export variables
 export LANG=ja_JP.UTF-8
 export EDITOR='subl -w'
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8" # for java/scala charset
 
@@ -16,7 +16,6 @@ export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8" # for java/scala charset
 alias ls='ls -G'
 # alias ls='ls --color=auto'
 alias ll='ls -la'
-alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 alias java="java $JAVA_OPTS"
 
 
