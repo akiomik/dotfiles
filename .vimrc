@@ -1,4 +1,4 @@
-" general
+" general settings
 se nu
 se sw=4
 se ts=4
@@ -9,7 +9,7 @@ se is
 se title
 
 
-" autocmd
+" my autocmds
 if has("autocmd")
 	" no expand tab file types
 	autocmd FileType make set noet
