@@ -65,3 +65,5 @@ NeoBundle 'SQLUtilities'
 
 " Vimshell
 NeoBundle 'Shougo/vimshell'
+command! Scala :VimShellInteractive scala
+command! Sbt :VimShellInteractive sbt
