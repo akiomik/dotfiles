@@ -71,7 +71,7 @@ setopt hist_ignore_dups
 
 
 #####################
-# vim
+# vim key bind
 #####################
 bindkey -v
 zle -A .backward-kill-word vi-backward-kill-word
@@ -82,7 +82,16 @@ zle -A .backward-delete-char vi-backward-delete-char
 # -a is command mode.
 bindkey -v '^A' vi-beginning-of-line
 bindkey -v '^E' vi-end-of-line
-bindkey -v '^U' vi-kill-line
+
+# show command line stack
+show_buffer_stack() {
+	POSTDISPLAY="
+stack: $LBUFFER"
+	zle push-line-or-edit
+}
+zle -N show_buffer_stack
+setopt noflowcontrol
+bindkey -v '^S' show_buffer_stack
 
 #####################
 # vi mode line
