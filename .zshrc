@@ -4,7 +4,9 @@
 # functions, options key bindings, etc.
 
 
+#####################
 # export variables
+#####################
 export LANG=ja_JP.UTF-8
 export EDITOR='subl -w'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -12,7 +14,9 @@ export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8" # for java/scala charset
 
 
+#####################
 # aliases
+#####################
 alias ls='ls -G'
 # alias ls='ls --color=auto'
 alias ll='ls -la'
@@ -20,10 +24,8 @@ alias java="java $JAVA_OPTS"
 
 
 #####################
-# zsh options
-#####################
-
 # complete
+#####################
 autoload -U compinit
 compinit
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
@@ -37,14 +39,18 @@ zstyle ':completion:*:default' menu select=1
 compdef mosh=ssh
 
 
+#####################
 # colors
+#####################
 autoload -U colors
 colors
 LS_COLORS='di=00;34'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
+#####################
 # prompt
+#####################
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '[%s:%b]'
 zstyle ':vcs_info:*' actionformats '[%s:%b|%a]'
@@ -55,14 +61,18 @@ RPROMPT="%1(v|%{${fg[green]}%}%1v%f|)" # vcs branch name
 setopt prompt_subst
 
 
+#####################
 # history
+#####################
 setopt hist_ignore_dups
 # setopt append_history
 # setopt inc_append_history
 # setopt share_history
 
 
+#####################
 # vim
+#####################
 bindkey -v
 zle -A .backward-kill-word vi-backward-kill-word
 zle -A .backward-delete-char vi-backward-delete-char
