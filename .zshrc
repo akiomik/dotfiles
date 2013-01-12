@@ -158,10 +158,14 @@ zle -N zle-keymap-select
 # for z
 . `brew --prefix`/etc/profile.d/z.sh
 
+
 # precmd
 function precmd () {
+	# for vcs_info
 	psvar=()
 	LANG=en_US.UTF-8 vcs_info
 	[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-	z --add "$(pwd -P)" # for z
+
+	# for z
+	z --add "$(pwd -P)"
 }
