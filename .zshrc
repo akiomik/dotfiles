@@ -106,7 +106,7 @@ readuntil() {
     done
 }
 
-# displays the vi mode, specified by the $VIMODE variable, under the current command line.
+# displays the vi mode, specified by the $1 variable, under the current command line.
 showmode() {
     typeset movedown
     typeset row
@@ -193,19 +193,20 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 
-
-
+#####################
 # others
+#####################
 # setopt no_beep
 # setopt hub
 # setopt nobgnice
-
 
 # for z
 . `brew --prefix`/etc/profile.d/z.sh
 
 
+#####################
 # precmd
+#####################
 function precmd () {
 	# for vcs_info
 	psvar=()
