@@ -82,6 +82,7 @@ zle -A .backward-delete-char vi-backward-delete-char
 # -a is command mode.
 bindkey -v '^A' vi-beginning-of-line
 bindkey -v '^E' vi-end-of-line
+bindkey -v '^U' kill-whole-line
 
 # show command line stack
 show_buffer_stack() {
