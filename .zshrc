@@ -161,6 +161,8 @@ function zle-line-init zle-keymap-select {
 		if [ $vimode = "NORMAL" ]; then
 			statbg="colour236"
 			statfg="colour247"
+			statl1bg="colour240"
+			statl1fg="colour231"
 			statl2bg="colour148"
 			statl2fg="colour22"
 			statr1bg="colour240"
@@ -170,6 +172,8 @@ function zle-line-init zle-keymap-select {
 		else
 			statbg="colour24"
 			statfg="colour117"
+			statl1bg="colour31"
+			statl1fg="colour231"
 			statl2bg="colour231"
 			statl2fg="colour23"
 			statr1bg="colour31"
@@ -179,13 +183,15 @@ function zle-line-init zle-keymap-select {
 		fi
 		tmux set -g status-bg ${statbg} > /dev/null
 		tmux set -g status-fg ${statfg} > /dev/null
-		statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode"
-		statl2a="#[bg=${statbg}, fg=${statl2bg}]⮀"
-		tmux set -g status-left "${statl2}${statl2a}" > /dev/null
+		statl1="#[bg=${statl1bg}, fg=${statl1fg}] #H "
+		statl1a="#[bg=${statbg}, fg=${statl1bg}]⮀"
+		statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
+		statl2a="#[bg=${statl1bg}, fg=${statl2bg}]⮀"
+		tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
+		statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/.battery) "
 		statr1a="#[bg=${statbg}, fg=${statr1bg}]⮂"
-		statr1="#[bg=${statr1bg}, fg=${statr1fg}]  #($HOME/.battery) "
+		statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
 		statr2a="#[bg=${statr1bg}, fg=${statr2bg}]⮂"
-		statr2="#[bg=${statr2bg}, fg=${statr2fg}]  %Y-%m-%d(%a) %H:%M "
 		tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
 	fi
 }
