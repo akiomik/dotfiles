@@ -153,10 +153,7 @@ function zle-line-init zle-keymap-select {
 	vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
 
 	# update status line
-	if [ $SHLVL = 1 ]; then
-		# zsh
-		showmode $vimode
-	else
+	if [ -n "$TMUX" ]; then
 		# tmux
 		if [ $vimode = "NORMAL" ]; then
 			statbg="colour236"
@@ -193,6 +190,9 @@ function zle-line-init zle-keymap-select {
 		statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
 		statr2a="#[bg=${statr1bg}, fg=${statr2bg}]⮂"
 		tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
+	else
+		# zsh
+		showmode $vimode
 	fi
 }
 zle -N zle-line-init
