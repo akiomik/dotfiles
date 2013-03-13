@@ -7,14 +7,11 @@ se si
 se hls
 se is
 se title
-
+se et
+se nf-=octal
 
 " my autocmds
 if has("autocmd")
-	" no expand tab file types
-	autocmd FileType make set noet
-	autocmd BufEnter *.tsv set noet
-
 	" save cursor position
 	autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
