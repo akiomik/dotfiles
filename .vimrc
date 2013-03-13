@@ -33,6 +33,13 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+"
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+
 
 " syntax
 syn on
@@ -66,3 +73,18 @@ NeoBundle 'SQLUtilities'
 NeoBundle 'Shougo/vimshell'
 command! Scala :VimShellInteractive scala
 command! Sbt :VimShellInteractive sbt
+
+" git-gutter
+NeoBundle 'akiomik/git-gutter-vim'
+
+" fugitive
+NeoBundle 'tpope/vim-fugitive'
+
+" minibufexplorer
+NeoBundle 'minibufexpl.vim'
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBuffs = 1
+
+filetype plugin indent on
+NeoBundleCheck
