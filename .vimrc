@@ -9,6 +9,11 @@ se is
 se title
 se et
 se nf-=octal
+se ruler
+se sm
+se bs=2
+se cul
+se sta
 
 " my autocmds
 if has("autocmd")
@@ -33,8 +38,8 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
 "
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
@@ -50,7 +55,7 @@ NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'desert256.vim'
 NeoBundle 'molokai'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'ootoovak/vim-tomorrow-night'
+NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'akiomik/itermcolors-vim'
 set t_Co=256
 colorscheme molokai
