@@ -8,10 +8,13 @@
 # export variables
 #####################
 export LANG=ja_JP.UTF-8
-export EDITOR='subl -w'
+export EDITOR='vim'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
-export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8" # for java/scala charset
+export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
+export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M" # for permgen space
+export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
+export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
 
 
 #####################
@@ -21,6 +24,15 @@ alias ls='ls -G'
 # alias ls='ls --color=auto'
 alias ll='ls -la'
 alias java="java $JAVA_OPTS"
+alias subl="subl -w"
+alias e="subl"
+case ${OSTYPE} in
+	darwin*)
+		alias top="htop"
+	;;
+	linux*)
+	;;
+esac
 
 
 #####################
