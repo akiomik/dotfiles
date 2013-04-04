@@ -7,6 +7,7 @@
 #####################
 # export variables
 #####################
+# {{{ export
 export LANG=ja_JP.UTF-8
 export EDITOR='vim'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -15,11 +16,13 @@ export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M" # for permgen space
 export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
+# }}}
 
 
 #####################
 # aliases
 #####################
+# {{{ aliases
 alias ls='ls -G'
 # alias ls='ls --color=auto'
 alias ll='ls -la'
@@ -33,11 +36,13 @@ case ${OSTYPE} in
 	linux*)
 	;;
 esac
+# }}}
 
 
 #####################
 # complete
 #####################
+# {{{ complete
 autoload -U compinit
 compinit
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
@@ -49,20 +54,24 @@ setopt list_types
 setopt auto_menu
 zstyle ':completion:*:default' menu select=1
 compdef mosh=ssh
+# }}}
 
 
 #####################
 # colors
 #####################
+# {{{ colors
 autoload -U colors
 colors
 LS_COLORS='di=00;34'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# }}}
 
 
 #####################
 # prompt
 #####################
+# {{{ prompt
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '[%s:%b]'
 zstyle ':vcs_info:*' actionformats '[%s:%b|%a]'
@@ -71,20 +80,24 @@ PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[magenta]}%}correct: %R -> %r [n/y/a/e]? %{${reset_color}%}"
 RPROMPT="%1(v|%{${fg[green]}%}%1v%f|)" # vcs branch name
 setopt prompt_subst
+# }}}
 
 
 #####################
 # history
 #####################
+# {{{ history
 setopt hist_ignore_dups
 # setopt append_history
 # setopt inc_append_history
 # setopt share_history
+# }}}
 
 
 #####################
 # vim key bind
 #####################
+# {{{ vim key bind
 bindkey -v
 zle -A .backward-kill-word vi-backward-kill-word
 zle -A .backward-delete-char vi-backward-delete-char
@@ -105,10 +118,12 @@ stack: $LBUFFER"
 zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey -v '^S' show_buffer_stack
+# }}}
 
 #####################
 # vi mode line
 #####################
+# {{{ vim mode line
 # Reads until the given character has been entered.
 readuntil() {
     typeset a
@@ -209,22 +224,26 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+# }}}
 
 
 #####################
 # others
 #####################
+# {{{ others
 # setopt no_beep
 # setopt hub
 # setopt nobgnice
 
 # for z
 . `brew --prefix`/etc/profile.d/z.sh
+# }}}
 
 
 #####################
 # precmd
 #####################
+# {{{ precmd
 function precmd () {
 	# for vcs_info
 	psvar=()
@@ -234,3 +253,4 @@ function precmd () {
 	# for z
 	z --add "$(pwd -P)"
 }
+# }}}
