@@ -1,21 +1,24 @@
 [user]
-	email = akiomik@gmail.com
+    email = akiomik@gmail.com
     name = "Akiomi Kamakura"
+[include]
+    path = .gitconfig.local
 [color]
-	ui = auto 
+    ui = auto
 [merge]
-	ff = false
-	tool = vimdiff
+    ff = false
+    tool = vimdiff
 [pull]
-	rebase = true
+    rebase = true
 [alias]
-	br = branch
-	ci = commit -a
-	co = checkout
-	st = status
-	up = pull
-	upstream = remote add upstream
+    br = branch
+    ci = commit -a
+    co = checkout
+    st = status
+    up = pull
+    upstream = remote add upstream
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
     editor = vim
+    pager = lv -c
