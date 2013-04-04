@@ -14,6 +14,7 @@ se sm
 se bs=2
 se cul
 se sta
+se fdm=marker
 
 " my autocmds
 if has("autocmd")
@@ -25,11 +26,19 @@ if has("autocmd")
 endif
 
 
+" keymap
+if &diff
+    map <Leader>1 :diffget LOCAL<CR>
+    map <Leader>2 :diffget BASE<CR>
+    map <Leader>3 :diffget REMOTE<CR>
+endif
+
+
 " NeoBundle
 " $ mkdir -p ~/.vim/bundle
 " $ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 " run :NeobundleInstall on vim
-se nocompatible               " Be iMproved
+se nocp                       " Be iMproved
 filetype off                  " Required!
 
 if has('vim_starting')
@@ -37,13 +46,15 @@ if has('vim_starting')
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
-
-
 NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
-"
+
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
+
+
+" encoding
+"source $VIM/encode.vim
 
 
 " syntax
@@ -90,6 +101,14 @@ NeoBundle 'minibufexpl.vim'
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
+nmap <C-n> :MBEbn<CR>
+nmap <C-p> :MBEbp<CR>
+nmap <C-d> :bd<CR>
+
+" nerdtree
+NeoBundle 'scrooloose/nerdtree'
+autocmd VimEnter * NERDTree ./
+let g:NERDTreeDirArrows=0
 
 filetype plugin indent on
 NeoBundleCheck
