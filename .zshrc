@@ -23,17 +23,17 @@ export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
 # aliases
 #####################
 # {{{ aliases
-alias ls='ls -G'
-# alias ls='ls --color=auto'
 alias ll='ls -la'
 alias java="java $JAVA_OPTS"
 alias subl="subl -w"
 alias e="subl"
 case ${OSTYPE} in
 	darwin*)
-		alias top="htop"
+        alias ls='ls -G'
+        alias top="htop"
 	;;
 	linux*)
+        alias ls='ls --color=auto'
 	;;
 esac
 # }}}
