@@ -110,5 +110,20 @@ NeoBundle 'scrooloose/nerdtree'
 let g:NERDTreeDirArrows=0
 autocmd vimenter * if !argc() | NERDTree | endif
 
+" coffee
+NeoBundle 'kchmck/vim-coffee-script'
+au BufNewFile,BufReadPost *.coffee setl filetype=coffee
+au BufNewFile,BufReadPost *.coffee setl sw=2 et
+
+" puppet
+NeoBundle 'rodjek/vim-puppet'
+au BufNewFile,BufReadPost *.pp setl filetype=puppet
+
+" syntastic
+NeoBundle 'scrooloose/syntastic'
+
+" comment
+NeoBundle 'tomtom/tcomment_vim'
+
 filetype plugin indent on
 NeoBundleCheck
