@@ -107,8 +107,8 @@ nmap <C-p> :MBEbp<CR>
 
 " nerdtree
 NeoBundle 'scrooloose/nerdtree'
-autocmd VimEnter * NERDTree ./
 let g:NERDTreeDirArrows=0
+autocmd vimenter * if !argc() | NERDTree | endif
 
 filetype plugin indent on
 NeoBundleCheck
