@@ -103,7 +103,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 nmap <C-n> :MBEbn<CR>
 nmap <C-p> :MBEbp<CR>
-nmap <C-d> :bd<CR>
+"nmap <C-d> :bd<CR>
 
 " nerdtree
 NeoBundle 'scrooloose/nerdtree'
