@@ -125,5 +125,8 @@ NeoBundle 'scrooloose/syntastic'
 " comment
 NeoBundle 'tomtom/tcomment_vim'
 
+" ctrlp
+NeoBundle 'kien/ctrlp.vim'
+
 filetype plugin indent on
 NeoBundleCheck
