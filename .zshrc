@@ -242,8 +242,7 @@ zle -N zle-keymap-select
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
 if [ "$SSH_AUTH_SOCK" != "$ssh_auth_sock" ]; then
     echo "SSH_AUTH_SOCK is $SSH_AUTH_SOCK"
-    ln -sf $SSH_AUTH_SOCK $ssh_auth_sock
-    SSH_AUTH_SOCK=$ssh_auth_sock
+    ln -sf $SSH_AUTH_SOCK $ssh_auth_sock && SSH_AUTH_SOCK=$ssh_auth_sock
 fi
 # }}}
 
