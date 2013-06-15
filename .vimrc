@@ -109,6 +109,7 @@ nmap <C-p> :MBEbp<CR>
 NeoBundle 'scrooloose/nerdtree'
 let g:NERDTreeDirArrows=0
 autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " coffee
 NeoBundle 'kchmck/vim-coffee-script'
