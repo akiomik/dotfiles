@@ -43,8 +43,11 @@ esac
 # complete
 #####################
 # {{{ complete
+if [ -e ~/.zsh-completions ]; then
+    fpath=(~/.zsh-completions $fpath)
+fi
 autoload -U compinit
-compinit
+compinit -u
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 setopt complete_in_word
 setopt correct
