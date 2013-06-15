@@ -128,5 +128,12 @@ NeoBundle 'tomtom/tcomment_vim'
 " ctrlp
 NeoBundle 'kien/ctrlp.vim'
 
+" indent
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" tagbar
+NeoBundle 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
 filetype plugin indent on
 NeoBundleCheck
