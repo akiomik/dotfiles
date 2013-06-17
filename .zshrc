@@ -239,7 +239,9 @@ zle -N zle-keymap-select
 # setopt nobgnice
 
 # for z
-. `brew --prefix`/etc/profile.d/z.sh
+if [ -e 'brew' ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+fi
 
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
@@ -261,6 +263,8 @@ function precmd () {
 	[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 
 	# for z
-	z --add "$(pwd -P)"
+    if [ -e 'z' ]; then
+        z --add "$(pwd -P)"
+    fi
 }
 # }}}
