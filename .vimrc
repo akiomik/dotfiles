@@ -18,11 +18,11 @@ se fdm=marker
 
 " my autocmds
 if has("autocmd")
-	" save cursor position
-	autocmd BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\     exe "normal g`\"" |
-		\ endif
+    " save cursor position
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     exe "normal g`\"" |
+        \ endif
 endif
 
 
@@ -42,7 +42,7 @@ se nocp                       " Be iMproved
 filetype off                  " Required!
 
 if has('vim_starting')
-	se runtimepath+=~/.vim/bundle/neobundle.vim/
+    se runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))

@@ -28,13 +28,13 @@ alias java="java $JAVA_OPTS"
 alias subl="subl -w"
 alias e="subl"
 case ${OSTYPE} in
-	darwin*)
+    darwin*)
         alias ls='ls -G'
         alias top="htop"
-	;;
-	linux*)
+    ;;
+    linux*)
         alias ls='ls --color=auto'
-	;;
+    ;;
 esac
 # }}}
 
@@ -114,9 +114,9 @@ bindkey -v '^U' kill-whole-line
 
 # show command line stack
 show_buffer_stack() {
-	POSTDISPLAY="
+    POSTDISPLAY="
 stack: $LBUFFER"
-	zle push-line-or-edit
+    zle push-line-or-edit
 }
 zle -N show_buffer_stack
 setopt noflowcontrol
@@ -164,7 +164,7 @@ showmode() {
     echo -n "\e[$movedown;E"
     echo -n "\e[${LINES};${movedown}H"
 
-	# change font attributes(bold or hilight)
+    # change font attributes(bold or hilight)
     echo -n "\e[1m"
 
     # print mode line or clear mode line
@@ -174,56 +174,56 @@ showmode() {
         echo -n "\e[0K"
     fi
 
-	# restore font and cursor position
+    # restore font and cursor position
     echo -n "\e[0m"
     echo -n "\e[u"
 }
 
 function zle-line-init zle-keymap-select {
-	vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
+    vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
 
-	# update status line
-	if [ -n "$TMUX" ]; then
-		# tmux
-		if [ $vimode = "NORMAL" ]; then
-			statbg="colour236"
-			statfg="colour247"
-			statl1bg="colour240"
-			statl1fg="colour231"
-			statl2bg="colour148"
-			statl2fg="colour22"
-			statr1bg="colour240"
-			statr1fg="colour247"
-			statr2bg="colour252"
-			statr2fg="colour236"
-		else
-			statbg="colour24"
-			statfg="colour117"
-			statl1bg="colour31"
-			statl1fg="colour231"
-			statl2bg="colour231"
-			statl2fg="colour23"
-			statr1bg="colour31"
-			statr1fg="colour117"
-			statr2bg="colour117"
-			statr2fg="colour23"
-		fi
-		tmux set -g status-bg ${statbg} > /dev/null
-		tmux set -g status-fg ${statfg} > /dev/null
-		statl1="#[bg=${statl1bg}, fg=${statl1fg}] #H "
-		statl1a="#[bg=${statbg}, fg=${statl1bg}]⮀"
-		statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
-		statl2a="#[bg=${statl1bg}, fg=${statl2bg}]⮀"
-		tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
-		statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/.battery) "
-		statr1a="#[bg=${statbg}, fg=${statr1bg}]⮂"
-		statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
-		statr2a="#[bg=${statr1bg}, fg=${statr2bg}]⮂"
-		tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
-	else
-		# zsh
-		showmode $vimode
-	fi
+    # update status line
+    if [ -n "$TMUX" ]; then
+        # tmux
+        if [ $vimode = "NORMAL" ]; then
+            statbg="colour236"
+            statfg="colour247"
+            statl1bg="colour240"
+            statl1fg="colour231"
+            statl2bg="colour148"
+            statl2fg="colour22"
+            statr1bg="colour240"
+            statr1fg="colour247"
+            statr2bg="colour252"
+            statr2fg="colour236"
+        else
+            statbg="colour24"
+            statfg="colour117"
+            statl1bg="colour31"
+            statl1fg="colour231"
+            statl2bg="colour231"
+            statl2fg="colour23"
+            statr1bg="colour31"
+            statr1fg="colour117"
+            statr2bg="colour117"
+            statr2fg="colour23"
+        fi
+        tmux set -g status-bg ${statbg} > /dev/null
+        tmux set -g status-fg ${statfg} > /dev/null
+        statl1="#[bg=${statl1bg}, fg=${statl1fg}] #H "
+        statl1a="#[bg=${statbg}, fg=${statl1bg}]⮀"
+        statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
+        statl2a="#[bg=${statl1bg}, fg=${statl2bg}]⮀"
+        tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
+        statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/.battery) "
+        statr1a="#[bg=${statbg}, fg=${statr1bg}]⮂"
+        statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
+        statr2a="#[bg=${statr1bg}, fg=${statr2bg}]⮂"
+        tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
+    else
+        # zsh
+        showmode $vimode
+    fi
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -257,12 +257,12 @@ fi
 #####################
 # {{{ precmd
 function precmd () {
-	# for vcs_info
-	psvar=()
-	LANG=en_US.UTF-8 vcs_info
-	[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    # for vcs_info
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 
-	# for z
+    # for z
     if [ -e 'z' ]; then
         z --add "$(pwd -P)"
     fi
