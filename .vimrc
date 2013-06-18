@@ -136,5 +136,11 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
+" scss
+NeoBundle 'cakebaker/scss-syntax.vim'
+
+" surround
+NeoBundle 'tpope/vim-surround'
+
 filetype plugin indent on
 NeoBundleCheck
