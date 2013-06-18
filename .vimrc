@@ -135,6 +135,21 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 " tagbar
 NeoBundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
 
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
