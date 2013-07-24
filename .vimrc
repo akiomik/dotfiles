@@ -60,7 +60,7 @@ NeoBundle 'Shougo/vimproc'
 " syntax
 syn on
 NeoBundle 'derekwyatt/vim-scala.git'
-
+au BufNewFile,BufReadPost *.scala setl filetype=scala
 
 " colorscheme
 NeoBundle 'desert256.vim'
@@ -122,6 +122,7 @@ au BufNewFile,BufReadPost *.pp setl filetype=puppet
 
 " syntastic
 NeoBundle 'scrooloose/syntastic'
+let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
 
 " comment
 NeoBundle 'tomtom/tcomment_vim'
