@@ -18,6 +18,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
 export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
 export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
+export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD_LIBRARY_PATH    # for openni
 # }}}
 
 
