@@ -111,6 +111,11 @@ let g:NERDTreeDirArrows=0
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" vimfiler
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+let g:vimfiler_as_default_explorer = 1
+
 " coffee
 NeoBundle 'kchmck/vim-coffee-script'
 au BufNewFile,BufReadPost *.coffee setl filetype=coffee
@@ -157,6 +162,9 @@ NeoBundle 'cakebaker/scss-syntax.vim'
 
 " surround
 NeoBundle 'tpope/vim-surround'
+
+" easymotion
+NeoBundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on
 NeoBundleCheck
