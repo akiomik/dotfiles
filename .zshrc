@@ -16,6 +16,8 @@ export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M" # for permgen space
 export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
+export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
+export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
 # }}}
 
 
