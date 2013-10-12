@@ -4,3 +4,18 @@
 # {{{ aliases
 alias ls='ls --color=auto'
 # }}}
+
+
+#####################
+# functions
+#####################
+# {{{ functions
+function is-ubuntu-or-debian() {
+    which lsb_release >/dev/null 2>&1 && lsb_release -si | grep -E 'Ubuntu|Debian' >/dev/null 2>&1
+}
+# }}}
+
+is-ubuntu-or-debian && {
+    export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
+    export PATH=$GEM_BIN:$PATH
+}
