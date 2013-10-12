@@ -1,7 +1,9 @@
 #! /bin/sh
 
 # get dotfiles list
-files=`ls -1Ap | grep "^\.[^./]\{1,\}$"`
+files=`ls -1Ap | grep "^\.[^/]\{1,\}$"`
+
+echo $files
 
 # create symlinks
 for file in $files; do

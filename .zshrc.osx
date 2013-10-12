@@ -1,0 +1,36 @@
+#####################
+# export variables
+#####################
+# {{{ export
+export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD_LIBRARY_PATH    # for openni
+export DYLD_LIBRARY_PATH=/Library/LeapDeveloperKit/LeapSDK/lib/:$DYLD_LIBRARY_PATH  # for leap motion
+# }}}
+
+
+#####################
+# aliases
+#####################
+# aliases {{{
+alias ls='ls -G'
+alias top="htop"
+# }}}
+
+
+#####################
+# others
+#####################
+# {{{ others
+# for z
+load-if-exists `brew --prefix`/etc/profile.d/z.sh && {
+    function precmd_z() { _z --add "$(pwd -P)" }
+    precmd_functions+=precmd_z
+}
+# }}}
+
+#####################
+# other sources
+#####################
+# {{{ other sources
+load-if-exists /opt/boxen/env.sh
+load-if-exists /opt/boxen/nvm/nvm.sh
+# }}}

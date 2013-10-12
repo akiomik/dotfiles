@@ -18,7 +18,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=$HOME/bin/play-2.1/:$PATH               # for play-2.1
 export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
 export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
-export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD_LIBRARY_PATH    # for openni
 # }}}
 
 
@@ -30,15 +29,6 @@ alias ll='ls -la'
 alias java="java $JAVA_OPTS"
 alias subl="subl -w"
 alias e="subl"
-case ${OSTYPE} in
-    darwin*)
-        alias ls='ls -G'
-        alias top="htop"
-    ;;
-    linux*)
-        alias ls='ls --color=auto'
-    ;;
-esac
 # }}}
 
 
@@ -71,6 +61,13 @@ autoload -U colors
 colors
 LS_COLORS='di=00;34'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# }}}
+
+#####################
+# functions
+#####################
+# {{{ functions
+function load-if-exists() { [ -f "$1" ] && source "$1" }
 # }}}
 
 
@@ -241,11 +238,6 @@ zle -N zle-keymap-select
 # setopt hub
 # setopt nobgnice
 
-# for z
-if [ -e 'brew' ]; then
-    . `brew --prefix`/etc/profile.d/z.sh
-fi
-
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
 if [ "$SSH_AUTH_SOCK" != "$ssh_auth_sock" ]; then
@@ -259,15 +251,28 @@ fi
 # precmd
 #####################
 # {{{ precmd
-function precmd () {
-    # for vcs_info
+# for vcs_info
+function precmd_vcs_info() {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-
-    # for z
-    if [ -e 'z' ]; then
-        z --add "$(pwd -P)"
-    fi
 }
+precmd_functions+=precmd_vcs_info
 # }}}
+
+
+#####################
+# other sources
+#####################
+# {{{ other sources
+case ${OSTYPE} in
+    darwin*)
+        load-if-exists ~/.zshrc.osx
+    ;;
+    linux*)
+        load-if-exists ~/.zshrc.linux
+    ;;
+esac
+load-if-exists ~/.zshrc.local
+# }}}
+
