@@ -1,4 +1,15 @@
 #####################
+# export variables
+#####################
+# {{{ export
+is-ubuntu-or-debian && {
+    export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
+    export PATH=$GEM_BIN:$PATH
+}
+# }}}
+
+
+#####################
 # aliases
 #####################
 # {{{ aliases
@@ -16,7 +27,3 @@ function is-ubuntu-or-debian() {
 }
 # }}}
 
-is-ubuntu-or-debian && {
-    export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
-    export PATH=$GEM_BIN:$PATH
-}
