@@ -29,6 +29,11 @@ alias ll='ls -la'
 alias java="java $JAVA_OPTS"
 alias subl="subl -w"
 alias e="subl"
+alias dstat-full='dstat -Tclmdrn'
+alias dstat-mem='dstat -Tclm'
+alias dstat-cpu='dstat -Tclr'
+alias dstat-net='dstat -Tclnd'
+alias dstat-disk='dstat -Tcldr'
 # }}}
 
 

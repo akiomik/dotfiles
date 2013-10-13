@@ -3,6 +3,7 @@
 #####################
 # {{{ aliases
 alias ls='ls --color=auto'
+alias ack="ack-grep"
 # }}}
 
 
