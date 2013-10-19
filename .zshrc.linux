@@ -1,4 +1,14 @@
 #####################
+# functions
+#####################
+# {{{ functions
+function is-ubuntu-or-debian() {
+    which lsb_release >/dev/null 2>&1 && lsb_release -si | grep -E 'Ubuntu|Debian' >/dev/null 2>&1
+}
+# }}}
+
+
+#####################
 # export variables
 #####################
 # {{{ export
@@ -15,15 +25,5 @@ is-ubuntu-or-debian && {
 # {{{ aliases
 alias ls='ls --color=auto'
 alias ack="ack-grep"
-# }}}
-
-
-#####################
-# functions
-#####################
-# {{{ functions
-function is-ubuntu-or-debian() {
-    which lsb_release >/dev/null 2>&1 && lsb_release -si | grep -E 'Ubuntu|Debian' >/dev/null 2>&1
-}
 # }}}
 
