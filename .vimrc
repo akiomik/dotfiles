@@ -174,5 +174,8 @@ NeoBundle 'tpope/vim-surround'
 " easymotion
 NeoBundle 'Lokaltog/vim-easymotion'
 
+" multiple cursor
+NeoBundle 'terryma/vim-multiple-cursors'
+
 filetype plugin indent on
 NeoBundleCheck
