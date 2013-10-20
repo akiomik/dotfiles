@@ -59,8 +59,10 @@ NeoBundle 'Shougo/vimproc'
 
 " syntax
 syn on
-NeoBundle 'derekwyatt/vim-scala.git'
+NeoBundle 'derekwyatt/vim-scala'
 au BufNewFile,BufReadPost *.scala setl filetype=scala
+NeoBundle 'derekwyatt/vim-sbt'
+au BufNewFile,BufReadPost *.sbt setl filetype=sbt
 
 " colorscheme
 NeoBundle 'desert256.vim'
