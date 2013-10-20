@@ -7,11 +7,11 @@ echo $files
 
 # create symlinks
 for file in $files; do
-	if [ -f "$HOME/$file" ]; then
-		continue
-	fi
+    if [ -f "$HOME/$file" ]; then
+        continue
+    fi
 
-	echo "> create symlink to $HOME/$file"
-	ln -s $PWD/$file $HOME/$file
+    echo "> create symlink to $HOME/$file"
+    ln -s $PWD/$file $HOME/$file
 done
 
