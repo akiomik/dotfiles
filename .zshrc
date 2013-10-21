@@ -152,12 +152,13 @@ fi
 #####################
 # {{{ precmd
 # for vcs_info
+autoload -Uz add-zsh-hook
 function precmd_vcs_info() {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-precmd_functions+=precmd_vcs_info
+add-zsh-hook precmd precmd_vcs_info
 # }}}
 
 

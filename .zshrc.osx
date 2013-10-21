@@ -130,7 +130,7 @@ zle -N zle-keymap-select
 # for z
 load-if-exists `brew --prefix`/etc/profile.d/z.sh && {
     function precmd_z() { _z --add "$(pwd -P)" }
-    precmd_functions+=precmd_z
+    add-zsh-hook precmd precmd_z
 }
 # }}}
 
