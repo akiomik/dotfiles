@@ -167,6 +167,7 @@ endif
 
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
+au BufNewFile,BufReadPost *.scss setl filetype=scss
 
 " surround
 NeoBundle 'tpope/vim-surround'
