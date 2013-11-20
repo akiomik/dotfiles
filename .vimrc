@@ -178,5 +178,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 " multiple cursor
 NeoBundle 'terryma/vim-multiple-cursors'
 
+" over
+NeoBundle 'osyo-manga/vim-over'
+
 filetype plugin indent on
 NeoBundleCheck
