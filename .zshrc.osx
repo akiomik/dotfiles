@@ -1,9 +1,19 @@
 #####################
+# other sources
+#####################
+# {{{ other sources
+load-if-exists /opt/boxen/env.sh
+load-if-exists /opt/boxen/nvm/nvm.sh
+# }}}
+
+#####################
 # export variables
 #####################
 # {{{ export
 export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD_LIBRARY_PATH    # for openni
 export DYLD_LIBRARY_PATH=/Library/LeapDeveloperKit/LeapSDK/lib/:$DYLD_LIBRARY_PATH  # for leap motion
+export PATH="$HOME/bin/mkscaladocset:$PATH"
+export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
 # }}}
 
 
@@ -134,12 +144,3 @@ load-if-exists `brew --prefix`/etc/profile.d/z.sh && {
 }
 # }}}
 
-
-#####################
-# other sources
-#####################
-# {{{ other sources
-load-if-exists /opt/boxen/env.sh
-load-if-exists /opt/boxen/nvm/nvm.sh
-# }}}
-#
