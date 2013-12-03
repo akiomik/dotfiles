@@ -81,6 +81,7 @@ set guifont=Inconsolata\ for\ Powerline
 let g:Powerline_symbols = 'fancy'
 se ls=2
 se nosmd
+"NeoBundle 'bling/vim-airline'
 
 " SQLUtilities
 " run :SQLUFormatter on vim??
@@ -167,7 +168,7 @@ endif
 
 " scss
 NeoBundle 'cakebaker/scss-syntax.vim'
-au BufNewFile,BufReadPost *.scss setl filetype=scss
+au BufNewFile,BufReadPost *.scss setl ft=scss
 
 " surround
 NeoBundle 'tpope/vim-surround'
