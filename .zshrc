@@ -175,6 +175,7 @@ case ${OSTYPE} in
         load-if-exists ~/.zshrc.linux
     ;;
 esac
+load-if-exists ~/.zshrc.npm
 load-if-exists ~/.zshrc.local
 # }}}
 
