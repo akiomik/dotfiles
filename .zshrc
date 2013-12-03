@@ -140,8 +140,9 @@ bindkey -v '^S' show_buffer_stack
 
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
-if [ "$SSH_AUTH_SOCK" != "$ssh_auth_sock" ]; then
-    echo "SSH_AUTH_SOCK is $SSH_AUTH_SOCK"
+if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$ssh_auth_sock" ]; then
+    echo "old SSH_AUTH_SOCK is $SSH_AUTH_SOCK"
+    echo "new SSH_AUTH_SOCK is $ssh_auth_sock"
     ln -sf $SSH_AUTH_SOCK $ssh_auth_sock && SSH_AUTH_SOCK=$ssh_auth_sock
 fi
 # }}}
