@@ -8,7 +8,7 @@ my dotfiles for develop environment.
 1. clone this repository.
 
   ```
-clone git@github.com:akiomik/git-gutter-vim.git
+clone git@github.com:akiomik/dotfiles.git
   ```
 
 2. create symlinks.
