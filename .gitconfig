@@ -34,7 +34,10 @@
 [core]
     editor = vim
     pager = lv -c
+    attributesfile = ~/.gitattributes
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
+[diff "scala"]
+    xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
