@@ -35,6 +35,7 @@
     editor = vim
     pager = lv -c
     attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore_global
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
