@@ -29,6 +29,8 @@
     upstream = remote add upstream
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ld-merged = !git branch --merged | grep -v \\* | grep -v master | grep -v develop | xargs -I % git branch -d %
+    ignore = !gibo
 [core]
     editor = vim
     pager = lv -c
