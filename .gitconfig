@@ -4,7 +4,15 @@
 [include]
     path = .gitconfig.local
 [color]
-    ui = auto
+    ui = true
+[color "diff"]
+    meta = red bold
+    frag = magenta bold
+    commit = cyan
+    # func = red
+    # old = red reverse
+    # new = green reverse
+    # whitespace = white reverse
 [merge]
     ff = false
     tool = vimdiff
