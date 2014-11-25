@@ -13,7 +13,7 @@ export EDITOR='vim'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
-export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M" # for permgen space
+export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=512M -XX:MaxPermSize=1024M" # for permgen space
 export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
 export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
@@ -24,6 +24,7 @@ export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
 # aliases
 #####################
 # {{{ aliases
+alias ls='ls -G'
 alias ll='ls -la'
 alias java="java $JAVA_OPTS"
 alias subl="subl -w"
@@ -43,7 +44,7 @@ alias g8-init="g8 n8han/giter8"
 #####################
 # {{{ complete
 if [ -e ~/.zsh-completions ]; then
-    fpath=(~/.zsh-completions $fpath)
+    fpath=(~/.zsh-completions/src $fpath)
 fi
 autoload -U compinit
 compinit -u
@@ -96,10 +97,14 @@ setopt prompt_subst
 # history
 #####################
 # {{{ history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt extended_history
+setopt share_history
 setopt hist_ignore_dups
 # setopt append_history
 # setopt inc_append_history
-# setopt share_history
 # }}}
 
 
@@ -137,6 +142,10 @@ bindkey -v '^S' show_buffer_stack
 # setopt no_beep
 # setopt hub
 # setopt nobgnice
+
+# zmv
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
 
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
