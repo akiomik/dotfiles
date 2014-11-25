@@ -57,12 +57,30 @@ NeoBundle 'Shougo/vimproc'
 "source $VIM/encode.vim
 
 
-" syntax
+" syntax & format
 syn on
+au BufNewFile,BufReadPost *.md setl filetype=markdown
 NeoBundle 'derekwyatt/vim-scala'
 au BufNewFile,BufReadPost *.scala setl filetype=scala
 NeoBundle 'derekwyatt/vim-sbt'
 au BufNewFile,BufReadPost *.sbt setl filetype=sbt
+NeoBundle 'slim-template/vim-slim'
+au BufNewFile,BufReadPost *.slim setl filetype=slim
+au BufNewFile,BufReadPost *.rb setl sw=2 et
+NeoBundle 'cakebaker/scss-syntax.vim'
+au BufNewFile,BufReadPost *.scss setl ft=scss
+NeoBundle 'kchmck/vim-coffee-script'
+au BufNewFile,BufReadPost *.coffee setl filetype=coffee
+au BufNewFile,BufReadPost *.coffee setl sw=2 et
+NeoBundle 'rodjek/vim-puppet'
+au BufNewFile,BufReadPost *.pp setl filetype=puppet
+NeoBundle 'hhvm/vim-hack'
+au BufNewFile,BufReadPost Routefile setl filetype=ruby
+
+" syntastic
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
+
 
 " colorscheme
 NeoBundle 'desert256.vim'
@@ -119,19 +137,6 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 
-" coffee
-NeoBundle 'kchmck/vim-coffee-script'
-au BufNewFile,BufReadPost *.coffee setl filetype=coffee
-au BufNewFile,BufReadPost *.coffee setl sw=2 et
-
-" puppet
-NeoBundle 'rodjek/vim-puppet'
-au BufNewFile,BufReadPost *.pp setl filetype=puppet
-
-" syntastic
-NeoBundle 'scrooloose/syntastic'
-let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
-
 " comment
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -166,10 +171,6 @@ if executable('coffeetags')
     \ }
 endif
 
-" scss
-NeoBundle 'cakebaker/scss-syntax.vim'
-au BufNewFile,BufReadPost *.scss setl ft=scss
-
 " surround
 NeoBundle 'tpope/vim-surround'
 
@@ -184,3 +185,5 @@ NeoBundle 'osyo-manga/vim-over'
 
 filetype plugin indent on
 NeoBundleCheck
+
+set backupskip=/tmp/*,/private/tmp/*
