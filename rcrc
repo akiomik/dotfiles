@@ -1,2 +1,2 @@
-EXCLUDES="README.md configure Brewfile brew2brewfile.sh"
+EXCLUDES="README.md homebrew"
 DOTFILES_DIRS="$HOME/.dotfiles"
