@@ -77,6 +77,8 @@ NeoBundle 'rodjek/vim-puppet'
 au BufNewFile,BufReadPost *.pp setl filetype=puppet
 NeoBundle 'hhvm/vim-hack'
 au BufNewFile,BufReadPost Routefile setl filetype=ruby
+NeoBundle 'wting/rust.vim'
+au BufNewFile,BufReadPost *.rs setl filetype=rust
 
 " syntastic
 NeoBundle 'scrooloose/syntastic'
