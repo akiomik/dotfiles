@@ -15,6 +15,7 @@ se bs=2
 se cul
 se sta
 se fdm=marker
+se nowrap
 
 " my autocmds
 if has("autocmd")
