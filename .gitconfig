@@ -42,3 +42,5 @@
     diff = diff-highlight | less
 [diff "scala"]
     xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
+[push]
+	default = simple
