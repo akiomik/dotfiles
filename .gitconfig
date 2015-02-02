@@ -44,3 +44,5 @@
     xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
 [push]
 	default = simple
+[ghq]
+	root = ~/src
