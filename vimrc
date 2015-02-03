@@ -177,8 +177,9 @@ endif
 " surround
 NeoBundle 'tpope/vim-surround'
 
-" easymotion
+" motions
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'kana/vim-smartword'
 
 " multiple cursor
 NeoBundle 'terryma/vim-multiple-cursors'
