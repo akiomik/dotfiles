@@ -104,10 +104,19 @@ se ls=2
 se nosmd
 "NeoBundle 'bling/vim-airline'
 
-" SQLUtilities
+
+" formatter
+" {{{ formatter
 " run :SQLUFormatter on vim??
-NeoBundle 'Align'
 NeoBundle 'SQLUtilities'
+
+NeoBundle 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+
 
 " Vimshell
 NeoBundle 'Shougo/vimshell'
