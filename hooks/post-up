@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "post up"
-
 # install vim plugins
 if [ ! -e ~/.vim/bundle/neobundle.vim ]; then
     mkdir -p ~/.vim/bundle
