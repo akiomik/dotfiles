@@ -84,12 +84,22 @@ call plug#begin('~/.vim/plugged')
 
     " powerline
     " {{{ powerline
-    Plug 'Lokaltog/vim-powerline'
+    Plug 'itchyny/lightline.vim'
+    let g:lightline = {
+          \ 'colorscheme': 'powerline',
+          \ 'active': {
+          \   'left': [['mode', 'paste'], ['fugitive', 'filename']]
+          \ },
+          \ 'component': {
+          \   'readonly': '%{&readonly?"⭤":""}',
+          \   'fugitive': '%{exists("*fugitive#head")?"⭠ ".fugitive#head():""}'
+          \ },
+          \ 'separator': { 'left': '⮀', 'right': '⮂' },
+          \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+          \ }
     set guifont=Inconsolata\ for\ Powerline
-    let g:Powerline_symbols = 'fancy'
     se ls=2
     se nosmd
-    "Plug 'bling/vim-airline'
     " }}}
 
 
