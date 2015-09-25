@@ -37,6 +37,7 @@ alias dstat-disk='dstat -Tcldr'
 alias sbt-init="g8 typesafehub/scala-sbt"
 alias g8-init="g8 n8han/giter8"
 alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
+alias vg="vagrant"
 # }}}
 
 
@@ -147,6 +148,9 @@ bindkey -v '^S' show_buffer_stack
 # zmv
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
+
+# zargs
+autoload zargs
 
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"

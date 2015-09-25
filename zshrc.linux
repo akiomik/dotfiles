@@ -25,5 +25,7 @@ is-ubuntu-or-debian && {
 # {{{ aliases
 alias ls='ls --color=auto'
 alias ack="ack-grep"
+alias pbcopy="xargs -I {} -0 tmux set-buffer {}"
+alias pbpaste="tmux show-buffer"
 # }}}
 
