@@ -31,6 +31,8 @@
     lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ld-merged = !git branch --merged | grep -v \\* | grep -v master | grep -v develop | xargs -I % git branch -d %
     ignore = !gibo
+    browse = !hub browse -- tree/$(git rev-parse --abbrev-ref HEAD)
+    issue = !hub browse -- issues/$(git rev-parse --abbrev-ref HEAD | cut -d '-' -f 2)
 [core]
     editor = vim
     pager = lv -c
