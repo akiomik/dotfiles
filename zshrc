@@ -36,6 +36,7 @@ alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
 alias sbt-init="g8 typesafehub/scala-sbt"
 alias g8-init="g8 n8han/giter8"
+alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 # }}}
 
 

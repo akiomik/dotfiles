@@ -14,7 +14,7 @@ export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD
 export DYLD_LIBRARY_PATH=/Library/LeapDeveloperKit/LeapSDK/lib/:$DYLD_LIBRARY_PATH  # for leap motion
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
-export ANDROID_HOME="/usr/local/Cellar/android-sdk/22.3/"
+export ANDROID_HOME=$(brew --prefix android-sdk)
 # }}}
 
 
