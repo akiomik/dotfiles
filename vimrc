@@ -64,6 +64,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'hhvm/vim-hack'
     au BufNewFile,BufReadPost Routefile setl filetype=ruby
     Plug 'wting/rust.vim', {'for': 'rust'}
+    Plug 'fatih/vim-go', {'for': 'go'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
@@ -222,3 +223,6 @@ call plug#end()
 set t_Co=256
 colorscheme molokai
 " }}}
+
+" completion
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
