@@ -65,6 +65,8 @@ call plug#begin('~/.vim/plugged')
     au BufNewFile,BufReadPost Routefile setl filetype=ruby
     Plug 'wting/rust.vim', {'for': 'rust'}
     Plug 'fatih/vim-go', {'for': 'go'}
+    au BufNewFile,BufReadPost *.hbs setl filetype=handlebars
+    Plug 'mustache/vim-mustache-handlebars', {'for': 'handlebars'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
