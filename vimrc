@@ -44,6 +44,8 @@ endif
 " {{{ plugins
 call plug#begin('~/.vim/plugged')
 
+    " misc
+    Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
     " encoding
     "source $VIM/encode.vim
@@ -70,6 +72,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dag/vim2hs', {'for': 'haskell'}
     let g:haskell_conceal = 0
     let g:haskell_folds = 0
+    Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
@@ -176,7 +179,7 @@ call plug#begin('~/.vim/plugged')
     let g:indent_guides_auto_colors=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-    Plug 'kana/vim-filetype-haskell'
+    Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
     " }}}
 
 
