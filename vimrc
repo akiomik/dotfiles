@@ -67,9 +67,20 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go', {'for': 'go'}
     au BufNewFile,BufReadPost *.hbs setl filetype=handlebars
     Plug 'mustache/vim-mustache-handlebars', {'for': 'handlebars'}
+    Plug 'dag/vim2hs', {'for': 'haskell'}
+    let g:haskell_conceal = 0
+    let g:haskell_folds = 0
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
+    let g:loaded_syntastic_haskell_ghc_mod_checker = 0
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
+    " let g:syntastic_always_populate_loc_list = 1
+    " let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
     " }}}
 
 
@@ -165,6 +176,7 @@ call plug#begin('~/.vim/plugged')
     let g:indent_guides_auto_colors=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+    Plug 'kana/vim-filetype-haskell'
     " }}}
 
 

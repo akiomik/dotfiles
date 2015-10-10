@@ -59,6 +59,11 @@ setopt list_types
 setopt auto_menu
 zstyle ':completion:*:default' menu select=1
 compdef mosh=ssh
+
+# stack
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script "$(which stack)")"
 # }}}
 
 
