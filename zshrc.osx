@@ -15,6 +15,7 @@ export DYLD_LIBRARY_PATH=/Library/LeapDeveloperKit/LeapSDK/lib/:$DYLD_LIBRARY_PA
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
 export ANDROID_HOME=$(brew --prefix android-sdk)
+export PATH="/usr/local/opt/mecab/libexec/mecab:$PATH"
 # }}}
 
 
