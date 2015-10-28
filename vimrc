@@ -76,6 +76,7 @@ call plug#begin('~/.vim/plugged')
     let g:haskell_rlangqq = 0
     Plug 'dag/vim2hs', {'for': 'haskell'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+    Plug 'othree/yajs.vim', {'for': 'javascript'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
