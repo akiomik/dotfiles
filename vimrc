@@ -69,9 +69,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go', {'for': 'go'}
     au BufNewFile,BufReadPost *.hbs setl filetype=handlebars
     Plug 'mustache/vim-mustache-handlebars', {'for': 'handlebars'}
-    Plug 'dag/vim2hs', {'for': 'haskell'}
     let g:haskell_conceal = 0
     let g:haskell_folds = 0
+    let g:haskell_indent = 0
+    let g:haskell_shqq = 0
+    let g:haskell_rlangqq = 0
+    Plug 'dag/vim2hs', {'for': 'haskell'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 
     Plug 'scrooloose/syntastic'
