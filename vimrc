@@ -17,6 +17,7 @@ se sta
 se fdm=marker
 se nowrap
 se bsk=/tmp/*,/private/tmp/*
+se clipboard=unnamed
 
 " my autocmds
 " {{{ my autocmds
