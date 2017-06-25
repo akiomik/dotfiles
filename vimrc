@@ -119,30 +119,36 @@ call plug#begin('~/.vim/plugged')
     " }}}
 
 
-    " tab
-    " {{{ tab
-    Plug 'minibufexpl.vim'
-    let g:miniBufExplMapWindowNavVim = 1
-    let g:miniBufExplMapWindowNavArrows = 1
-    let g:miniBufExplMapCTabSwitchBuffs = 1
-    nmap <C-n> :MBEbn<CR>
-    nmap <C-p> :MBEbp<CR>
-    "nmap <C-d> :bd<CR>
-    " }}}
-
-
     " filer
     " {{{ filer
     Plug 'scrooloose/nerdtree'
-    let g:NERDTreeDirArrows=0
-    autocmd vimenter * if !argc() | NERDTree | endif
+    Plug 'jistr/vim-nerdtree-tabs'
+    let g:nerdtree_tabs_open_on_console_startup=1
+    " close nerdtree automatically
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
     Plug 'Shougo/unite.vim'
     Plug 'Shougo/vimfiler.vim'
     let g:vimfiler_as_default_explorer = 1
 
-    Plug 'kien/ctrlp.vim'
+    " tab
+    " {{{ tab
+    set showtabline=2 " 常にタブラインを表示
+
+    " デフォルトのtはfで代替可能
+    nnoremap [Tag] <Nop>
+    nmap t [Tag]
+
+    " t1 ~ t9で移動
+    for n in range(1, 9)
+      execute 'nnoremap <silent> [Tag]'.n ':<C-u>tabnext'.n.'<CR>'
+    endfor
+
+    " tc, tx, tn, tp
+    map <silent> [Tag]c :tablast <bar> tabnew<CR>
+    map <silent> [Tag]x :tabclose<CR>
+    map <silent> [Tag]n :tabnext<CR>
+    map <silent> [Tag]p :tabprevious<CR>
     " }}}
 
 
