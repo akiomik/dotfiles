@@ -228,7 +228,8 @@ call plug#begin('~/.vim/plugged')
     " multiple cursor
     Plug 'terryma/vim-multiple-cursors'
 
-    " over
+
+    " search highlight
     Plug 'osyo-manga/vim-over'
 
 
