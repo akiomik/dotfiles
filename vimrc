@@ -127,9 +127,11 @@ call plug#begin('~/.vim/plugged')
     " close nerdtree automatically
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-    Plug 'Shougo/unite.vim'
-    Plug 'Shougo/vimfiler.vim'
-    let g:vimfiler_as_default_explorer = 1
+    Plug 'ctrlpvim/ctrlp.vim'
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+    set wildignore+=*/dist/*,*/node_modules/*,*/target/*
+    " }}}
+
 
     " tab
     " {{{ tab
