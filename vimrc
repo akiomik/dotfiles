@@ -1,7 +1,7 @@
 " general settings
 se nu
-se sw=4
-se ts=4
+se sw=2
+se ts=2
 se sc
 se si
 se hls
