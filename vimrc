@@ -88,18 +88,14 @@ call plug#begin('~/.vim/plugged')
     " let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
+    let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
     " }}}
 
 
     " colorscheme
     " "{{{ colorscheme
-    Plug 'desert256.vim'
-    Plug 'tomasr/molokai'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-    Plug 'akiomik/itermcolors-vim'
-    "set background=dark
-    "colorscheme solarized
+    Plug 'w0ng/vim-hybrid'
+    let g:hybrid_custom_term_colors = 1
     "}}}
 
 
@@ -225,18 +221,21 @@ call plug#begin('~/.vim/plugged')
     " git
     " {{{ git
     Plug 'akiomik/git-gutter-vim'
-    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive' " for lightline
     " }}}
 
 
 call plug#end()
 " }}}
 
+
 " colorscheme
 " {{{ colorscheme
-set t_Co=256
-colorscheme molokai
+se t_Co=256
+se bg=dark
+colorscheme hybrid
 " }}}
+
 
 " completion
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
