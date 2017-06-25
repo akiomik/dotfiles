@@ -54,14 +54,13 @@ call plug#begin('~/.vim/plugged')
     " syntax & format
     " {{{ syntax & format
     syn on
+    au BufNewFile,BufReadPost *.gradle setl filetype=groovy
     au BufNewFile,BufReadPost *.md setl filetype=markdown
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
-    Plug 'derekwyatt/vim-sbt', {'for': 'sbt'}
+    au BufNewFile,BufReadPost *.sbt setl filetype=scala
     Plug 'slim-template/vim-slim', {'for': 'slim'}
-    au BufNewFile,BufReadPost *.rb setl sw=2 et
     Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
     Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
-    au BufNewFile,BufReadPost *.coffee setl sw=2 et
     Plug 'rodjek/vim-puppet', {'for': 'puppet'}
     Plug 'hhvm/vim-hack'
     au BufNewFile,BufReadPost Routefile setl filetype=ruby
@@ -74,13 +73,15 @@ call plug#begin('~/.vim/plugged')
     let g:haskell_indent = 0
     let g:haskell_shqq = 0
     let g:haskell_rlangqq = 0
-    Plug 'dag/vim2hs', {'for': 'haskell'}
+    Plug 'akiomik/vim2hs', {'for': 'haskell'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'othree/yajs.vim', {'for': 'javascript'}
+    Plug 'leafgarland/typescript-vim'
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
     let g:loaded_syntastic_haskell_ghc_mod_checker = 0
+    let g:syntastic_scala_checkers = ['fsc']
     " set statusline+=%#warningmsg#
     " set statusline+=%{SyntasticStatuslineFlag()}
     " set statusline+=%*
