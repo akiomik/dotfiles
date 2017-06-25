@@ -110,15 +110,8 @@ call plug#begin('~/.vim/plugged')
           \ 'colorscheme': 'powerline',
           \ 'active': {
           \   'left': [['mode', 'paste'], ['fugitive', 'filename']]
-          \ },
-          \ 'component': {
-          \   'readonly': '%{&readonly?"⭤":""}',
-          \   'fugitive': '%{exists("*fugitive#head")?"⭠ ".fugitive#head():""}'
-          \ },
-          \ 'separator': { 'left': '⮀', 'right': '⮂' },
-          \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
           \ }
-    set guifont=Inconsolata\ for\ Powerline
+    \ }
     se ls=2
     se nosmd
     " }}}
