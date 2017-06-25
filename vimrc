@@ -97,7 +97,6 @@ call plug#begin('~/.vim/plugged')
     " {{{ colorscheme
     Plug 'w0ng/vim-hybrid'
     Plug 'cocopon/lightline-hybrid.vim'
-    let g:hybrid_custom_term_colors = 1
     " }}}
 
 
