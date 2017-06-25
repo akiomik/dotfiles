@@ -94,20 +94,25 @@ call plug#begin('~/.vim/plugged')
 
 
     " colorscheme
-    " "{{{ colorscheme
+    " {{{ colorscheme
     Plug 'w0ng/vim-hybrid'
+    Plug 'cocopon/lightline-hybrid.vim'
     let g:hybrid_custom_term_colors = 1
-    "}}}
+    " }}}
 
 
     " powerline
     " {{{ powerline
     Plug 'itchyny/lightline.vim'
     let g:lightline = {
-          \ 'colorscheme': 'powerline',
+          \ 'colorscheme': 'hybrid',
           \ 'active': {
-          \   'left': [['mode', 'paste'], ['fugitive', 'filename']]
-          \ }
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+          \ },
+          \ 'component_function': {
+          \   'gitbranch': 'fugitive#head'
+          \ },
     \ }
     se ls=2
     se nosmd
