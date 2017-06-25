@@ -10,11 +10,8 @@ load-if-exists /opt/boxen/nvm/nvm.sh
 # export variables
 #####################
 # {{{ export
-export DYLD_LIBRARY_PATH=`brew --prefix`/Cellar/openni/stable-1.5.2.23/lib:$DYLD_LIBRARY_PATH    # for openni
-export DYLD_LIBRARY_PATH=/Library/LeapDeveloperKit/LeapSDK/lib/:$DYLD_LIBRARY_PATH  # for leap motion
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
-export ANDROID_HOME=$(brew --prefix android-sdk)
 export PATH="/usr/local/opt/mecab/libexec/mecab:$PATH"
 # }}}
 
