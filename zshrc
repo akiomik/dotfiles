@@ -13,7 +13,7 @@ export EDITOR='vim'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
-export SBT_OPTS="$SBT_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=512M -XX:MaxPermSize=1024M" # for permgen space
+export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
 export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
 export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
@@ -34,7 +34,7 @@ alias dstat-mem='dstat -Tclm'
 alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
-alias sbt-init="g8 typesafehub/scala-sbt"
+alias sbt-init="sbt new scala/scala-seed.g8"
 alias g8-init="g8 n8han/giter8"
 alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias vg="vagrant"
