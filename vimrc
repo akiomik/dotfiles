@@ -240,6 +240,10 @@ call plug#begin('~/.vim/plugged')
     " }}}
 
 
+    " EditorConfig
+    Plug 'editorconfig/editorconfig-vim'
+
+
 call plug#end()
 " }}}
 
