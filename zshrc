@@ -198,6 +198,3 @@ load-if-exists ~/.zshrc.npm
 load-if-exists ~/.zshrc.local
 # }}}
 
-
-# added by travis gem
-[ -f /Users/akiomi/.travis/travis.sh ] && source /Users/akiomi/.travis/travis.sh

@@ -122,5 +122,8 @@ load-if-exists `brew --prefix`/etc/profile.d/z.sh && {
 }
 # for japanese
 setopt COMBINING_CHARS
+
+# added by travis gem
+[ -f /Users/akiomi/.travis/travis.sh ] && source /Users/akiomi/.travis/travis.sh
 # }}}
 
