@@ -13,6 +13,7 @@ load-if-exists /opt/boxen/nvm/nvm.sh
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
 export PATH="/usr/local/opt/mecab/libexec/mecab:$PATH"
+export FPATH="$(brew --cellar zsh)/5.3.1_1/share/zsh/functions:$FPATH"
 # }}}
 
 
