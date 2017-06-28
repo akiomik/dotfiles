@@ -183,7 +183,15 @@ fi
 # {{{ plugins
 source $ZPLUG_HOME/init.zsh # zplug
 
-zplug "b4b4r07/emoji-cli"
+zplug 'zsh-users/zsh-completions'
+
+zplug 'b4b4r07/peco-tmux.sh', \
+    as:command, \
+    use:'(*).sh', \
+    rename-to:'$1'
+
+zplug 'b4b4r07/emoji-cli'
+export EMOJI_CLI_FILTER="peco-tmux:peco"
 bindkey '^xe' emoji::cli
 bindkey '^x^e' emoji::cli
 
