@@ -84,14 +84,21 @@ function load-if-exists() { [ -f "$1" ] && source "$1" }
 # prompt
 #####################
 # {{{ prompt
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%s:%b]'
-zstyle ':vcs_info:*' actionformats '[%s:%b|%a]'
-PROMPT="%{${fg[cyan]}%}[%n@%m %~]%(!.#.$)%{${reset_color}%} "
-PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
-SPROMPT="%{${fg[magenta]}%}correct: %R -> %r [n/y/a/e]? %{${reset_color}%}"
-RPROMPT="%1(v|%{${fg[green]}%}%1v%f|)" # vcs branch name
 setopt prompt_subst
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+precmd () { vcs_info }
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '%F{yellow}' # %c
+zstyle ':vcs_info:git:*' unstagedstr '%F{red}'  # %u
+zstyle ':vcs_info:*' formats '%F{green}%c%u[%s:%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{green}%c%u[%s:%b|%a]%f'
+PROMPT="
+%~
+%(?.%F{green}❯%f.%F{red}❯%f) "
+PROMPT2="%F{blue}%_> %f}"
+SPROMPT="%F{magenta}correct: %R -> %r [n/y/a/e]? %f}"
+RPROMPT='${vcs_info_msg_0_}'
 # }}}
 
 
@@ -134,21 +141,6 @@ stack: $LBUFFER"
 zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey -v '^S' show_buffer_stack
-# }}}
-
-
-#####################
-# precmd
-#####################
-# {{{ precmd
-# for vcs_info
-autoload -Uz add-zsh-hook
-function precmd_vcs_info() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd precmd_vcs_info
 # }}}
 
 
