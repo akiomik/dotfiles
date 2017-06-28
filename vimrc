@@ -54,7 +54,6 @@ call plug#begin('~/.vim/plugged')
 
     " syntax & format
     " {{{ syntax & format
-    syn on
     au BufNewFile,BufReadPost *.gradle setl filetype=groovy
     au BufNewFile,BufReadPost *.md setl filetype=markdown
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
@@ -194,7 +193,7 @@ call plug#begin('~/.vim/plugged')
     " formatter
     " {{{ formatter
     " run :SQLUFormatter on vim??
-    Plug 'SQLUtilities'
+    Plug 'vim-scripts/SQLUtilities'
 
     Plug 'junegunn/vim-easy-align'
     " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
