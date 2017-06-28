@@ -65,8 +65,6 @@ eval "$(stack --bash-completion-script "$(which stack)")"
 # colors
 #####################
 # {{{ colors
-autoload -U colors
-colors
 LS_COLORS='di=00;34'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # }}}
