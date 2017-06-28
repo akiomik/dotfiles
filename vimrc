@@ -75,7 +75,7 @@ call plug#begin('~/.vim/plugged')
     let g:haskell_rlangqq = 0
     Plug 'akiomik/vim2hs', {'for': 'haskell'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
-    Plug 'othree/yajs.vim', {'for': 'javascript'}
+    Plug 'isRuslan/vim-es6', {'for': 'javascript'}
     Plug 'leafgarland/typescript-vim'
 
     Plug 'scrooloose/syntastic'
