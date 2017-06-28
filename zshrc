@@ -15,8 +15,7 @@ export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
 export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
-export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
-export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
+export ZPLUG_HOME=/usr/local/opt/zplug
 # }}}
 
 
@@ -27,8 +26,6 @@ export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
 alias ls='ls -G'
 alias ll='ls -la'
 alias java="java $JAVA_OPTS"
-alias subl="subl -w"
-alias e="subl"
 alias dstat-full='dstat -Tclmdrn'
 alias dstat-mem='dstat -Tclm'
 alias dstat-cpu='dstat -Tclr'
@@ -45,9 +42,6 @@ alias vg="vagrant"
 # complete
 #####################
 # {{{ complete
-if [ -e ~/.zsh-completions ]; then
-    fpath=(~/.zsh-completions/src $fpath)
-fi
 autoload -U compinit
 compinit -u
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
@@ -76,6 +70,7 @@ colors
 LS_COLORS='di=00;34'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # }}}
+
 
 #####################
 # functions
@@ -143,6 +138,21 @@ bindkey -v '^S' show_buffer_stack
 
 
 #####################
+# precmd
+#####################
+# {{{ precmd
+# for vcs_info
+autoload -Uz add-zsh-hook
+function precmd_vcs_info() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd precmd_vcs_info
+# }}}
+
+
+#####################
 # others
 #####################
 # {{{ others
@@ -168,17 +178,16 @@ fi
 
 
 #####################
-# precmd
+# plugins
 #####################
-# {{{ precmd
-# for vcs_info
-autoload -Uz add-zsh-hook
-function precmd_vcs_info() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd precmd_vcs_info
+# {{{ plugins
+source $ZPLUG_HOME/init.zsh # zplug
+
+zplug "b4b4r07/emoji-cli"
+bindkey '^xe' emoji::cli
+bindkey '^x^e' emoji::cli
+
+zplug load
 # }}}
 
 
