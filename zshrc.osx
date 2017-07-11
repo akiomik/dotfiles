@@ -15,7 +15,8 @@ export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for
 export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
-export FPATH="$(brew --cellar zsh)/5.3.1_1/share/zsh/functions:$FPATH"
+export FPATH="$(brew --prefix)/share/zsh/functions:$FPATH"
+
 # }}}
 
 
@@ -25,6 +26,7 @@ export FPATH="$(brew --cellar zsh)/5.3.1_1/share/zsh/functions:$FPATH"
 # aliases {{{
 alias ls='ls -G'
 alias top="htop"
+alias cs="$(brew --prefix giter8)/libexec/conscript/bin/cs" # conscript
 # }}}
 
 
