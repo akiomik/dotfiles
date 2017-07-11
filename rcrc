@@ -1,2 +1,3 @@
 EXCLUDES="README.md homebrew"
 DOTFILES_DIRS="$HOME/.dotfiles"
+UNDOTTED="bin"
