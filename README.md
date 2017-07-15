@@ -24,7 +24,8 @@ brew install rcm
 3. create symlinks.
 
   ```sh
-env RCRC=$HOME/.dotfiles/rcrc rcup
+# stty sane for vim PlugInstall: https://superuser.com/q/336016
+env RCRC=$HOME/.dotfiles/rcrc rcup && stty sane
   ```
 
 ### Brewfile
