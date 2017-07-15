@@ -7,6 +7,7 @@ export HOMEBREW_PREFIX="/usr/local"
 path=( \
   $HOME/bin/mkscaladocset(N-/) \
   $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
+  $HOMEBREW_PREFIX/opt/giter8/libexec/conscript/bin(N-/) \
   $path \
 )
 
@@ -23,7 +24,6 @@ fpath=( \
 # aliases {{{
 alias ls='ls -G'
 alias top="htop"
-alias cs="$HOMEBREW_PREFIX/opt/giter8/libexec/conscript/bin/cs" # conscript
 # }}}
 
 
