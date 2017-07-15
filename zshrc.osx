@@ -11,12 +11,9 @@ load-if-exists /opt/boxen/nvm/nvm.sh
 # export variables
 #####################
 # {{{ export
-export PATH=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/bin:$PATH       # for coffeetags
-export RUBYLIB=/Library/Ruby/Gems/1.8/gems/CoffeeTags-0.0.3.0/lib:$RUBYLIB
 export PATH="$HOME/bin/mkscaladocset:$PATH"
 export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
 export FPATH="$(brew --prefix)/share/zsh/functions:$FPATH"
-
 # }}}
 
 
