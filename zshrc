@@ -42,8 +42,7 @@ alias vg="vagrant"
 # complete
 #####################
 # {{{ complete
-autoload -U compinit
-compinit -u
+autoload -U +X compinit && compinit -u -d ~/.zsh/zcompdump
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 setopt complete_in_word
 setopt correct
@@ -55,7 +54,6 @@ zstyle ':completion:*:default' menu select=1
 compdef mosh=ssh
 
 # stack
-autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script "$(which stack)")"
 # }}}
@@ -104,7 +102,7 @@ RPROMPT='${vcs_info_msg_0_}'
 # history
 #####################
 # {{{ history
-HISTFILE=$HOME/.zsh_history
+HISTFILE=$HOME/.zsh/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt extended_history
@@ -195,13 +193,13 @@ zplug load
 # {{{ other sources
 case ${OSTYPE} in
     darwin*)
-        load-if-exists ~/.zshrc.osx
+        load-if-exists ~/.zsh/zshrc.osx
     ;;
     linux*)
-        load-if-exists ~/.zshrc.linux
+        load-if-exists ~/.zsh/zshrc.linux
     ;;
 esac
-load-if-exists ~/.zshrc.npm
-load-if-exists ~/.zshrc.local
+load-if-exists ~/.zsh/zshrc.npm
+load-if-exists ~/.zsh/zshrc.local
 # }}}
 
