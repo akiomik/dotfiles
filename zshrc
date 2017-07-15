@@ -94,8 +94,8 @@ zstyle ':vcs_info:*' actionformats '%F{green}%c%u[%s:%b|%a]%f'
 PROMPT="
 %~
 %(?.%F{green}❯%f.%F{red}❯%f) "
-PROMPT2="%F{blue}%_> %f}"
-SPROMPT="%F{magenta}correct: %R -> %r [n/y/a/e]? %f}"
+PROMPT2="%F{blue}%_> %f"
+SPROMPT="%F{magenta}correct: %R -> %r [n/y/a/e]? %f"
 RPROMPT='${vcs_info_msg_0_}'
 # }}}
 
