@@ -36,6 +36,7 @@ alias sbt-init="sbt new scala/scala-seed.g8"
 alias g8-init="g8 n8han/giter8"
 alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias vg="vagrant"
+alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
 # }}}
 
 
@@ -43,7 +44,7 @@ alias vg="vagrant"
 # complete
 #####################
 # {{{ complete
-autoload -U +X compinit && compinit -u -d ~/.zsh/zcompdump
+# NOTE: compinit is loaded by zplug
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 setopt complete_in_word
 setopt correct
@@ -52,11 +53,6 @@ setopt auto_list
 setopt list_types
 setopt auto_menu
 zstyle ':completion:*:default' menu select=1
-compdef mosh=ssh
-
-# stack
-autoload -U +X bashcompinit && bashcompinit
-eval "$(stack --bash-completion-script "$(which stack)")"
 # }}}
 
 
@@ -200,7 +196,5 @@ case ${OSTYPE} in
         load-if-exists ~/.zsh/zshrc.linux
     ;;
 esac
-load-if-exists ~/.zsh/zshrc.npm
 load-if-exists ~/.zsh/zshrc.local
 # }}}
-

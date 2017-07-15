@@ -1,19 +1,11 @@
 #####################
-# other sources
-#####################
-# {{{ other sources
-load-if-exists /opt/boxen/env.sh
-load-if-exists /opt/boxen/nvm/nvm.sh
-# }}}
-
-
-#####################
 # export variables
 #####################
 # {{{ export
+export HOMEBREW_PREFIX="/usr/local"
 export PATH="$HOME/bin/mkscaladocset:$PATH"
-export PATH=`brew --prefix`/share/git-core/contrib/diff-highlight:$PATH
-export FPATH="$(brew --prefix)/share/zsh/functions:$FPATH"
+export PATH="$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight:$PATH"
+export FPATH="$HOMEBREW_PREFIX/share/zsh/functions:$FPATH"
 # }}}
 
 
@@ -23,7 +15,7 @@ export FPATH="$(brew --prefix)/share/zsh/functions:$FPATH"
 # aliases {{{
 alias ls='ls -G'
 alias top="htop"
-alias cs="$(brew --prefix giter8)/libexec/conscript/bin/cs" # conscript
+alias cs="$HOMEBREW_PREFIX/opt/giter8/libexec/conscript/bin/cs" # conscript
 # }}}
 
 
@@ -119,8 +111,4 @@ zle -N zle-keymap-select
 # {{{ others
 # for japanese
 setopt COMBINING_CHARS
-
-# added by travis gem
-[ -f /Users/akiomi/.travis/travis.sh ] && source /Users/akiomi/.travis/travis.sh
 # }}}
-
