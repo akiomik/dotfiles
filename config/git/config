@@ -2,7 +2,7 @@
     email = akiomik@gmail.com
     name = "Akiomi Kamakura"
 [include]
-    path = .gitconfig.local
+    path = ~/.config/git/config.local
 [color]
     ui = true
 [color "diff"]
@@ -36,8 +36,6 @@
 [core]
     editor = vim
     pager = lv -c
-    attributesfile = ~/.gitattributes
-    excludesfile = ~/.gitignore_global
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
