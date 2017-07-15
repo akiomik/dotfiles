@@ -90,10 +90,10 @@ autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
 precmd () { vcs_info }
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr '%F{yellow}' # %c
-zstyle ':vcs_info:git:*' unstagedstr '%F{red}'  # %u
-zstyle ':vcs_info:*' formats '%F{green}%c%u[%s:%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{green}%c%u[%s:%b|%a]%f'
+zstyle ':vcs_info:git:*' stagedstr     '%F{yellow}'           # %c
+zstyle ':vcs_info:git:*' unstagedstr   '%F{red}'              # %u
+zstyle ':vcs_info:*'     formats       '%F{green}%c%u%b%f'    # %b: branch
+zstyle ':vcs_info:*'     actionformats '%F{green}%c%u%b:%a%f' # %a: action
 PROMPT="
 %~
 %(?.%F{green}❯%f.%F{red}❯%f) "
