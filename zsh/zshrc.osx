@@ -3,9 +3,17 @@
 #####################
 # {{{ export
 export HOMEBREW_PREFIX="/usr/local"
-export PATH="$HOME/bin/mkscaladocset:$PATH"
-export PATH="$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight:$PATH"
-export FPATH="$HOMEBREW_PREFIX/share/zsh/functions:$FPATH"
+
+path=( \
+  $HOME/bin/mkscaladocset(N-/) \
+  $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
+  $path \
+)
+
+fpath=( \
+  $HOMEBREW_PREFIX/share/zsh/functions(N-/) \
+  $fpath
+)
 # }}}
 
 

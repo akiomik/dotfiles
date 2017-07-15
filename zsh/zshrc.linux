@@ -14,7 +14,10 @@ function is-ubuntu-or-debian() {
 # {{{ export
 is-ubuntu-or-debian && {
     export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
-    export PATH=$GEM_BIN:$PATH
+    path=( \
+      $GEM_BIN(N-/) \
+      $path \
+    )
 }
 # }}}
 
@@ -28,4 +31,3 @@ alias ack="ack-grep"
 alias pbcopy="xargs -I {} -0 tmux set-buffer {}"
 alias pbpaste="tmux show-buffer"
 # }}}
-

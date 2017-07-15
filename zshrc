@@ -8,13 +8,21 @@
 # export variables
 #####################
 # {{{ export
+typeset -xU path fpath
+
+path=( \
+  $HOME/bin(N-/) \
+  $HOME/.local/bin(N-/) \
+  $HOME/.nodebrew/current/bin(N-/) \
+  /usr/local/bin(N-/) \
+  $path \
+)
+
 export LANG=ja_JP.UTF-8
 export EDITOR='vim'
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
-export PATH=$HOME/.nodebrew/current/bin:$PATH       # for nodebrew
 export ZPLUG_HOME=/usr/local/opt/zplug
 export GIBO_BOILERPLATES="$HOME/.config/git/ignore-boilerplates"
 # }}}
