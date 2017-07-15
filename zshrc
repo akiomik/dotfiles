@@ -177,6 +177,7 @@ fi
 source $ZPLUG_HOME/init.zsh # zplug
 
 zplug 'zsh-users/zsh-completions'
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug 'b4b4r07/peco-tmux.sh', \
     as:command, \
@@ -187,6 +188,10 @@ zplug 'b4b4r07/emoji-cli'
 export EMOJI_CLI_FILTER="peco-tmux:peco"
 bindkey '^xe' emoji::cli
 bindkey '^x^e' emoji::cli
+
+if ! zplug check; then
+  zplug install
+fi
 
 zplug load
 # }}}
