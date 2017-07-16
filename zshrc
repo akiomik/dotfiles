@@ -171,13 +171,26 @@ fi
 
 
 #####################
+# other sources
+#####################
+# {{{ other sources
+case ${OSTYPE} in
+    darwin*)
+        load-if-exists ~/.zsh/zshrc.osx
+    ;;
+    linux*)
+        load-if-exists ~/.zsh/zshrc.linux
+    ;;
+esac
+load-if-exists ~/.zsh/zshrc.local
+# }}}
+
+
+#####################
 # plugins
 #####################
 # {{{ plugins
 source $ZPLUG_HOME/init.zsh # zplug
-
-zplug 'zsh-users/zsh-completions'
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug 'b4b4r07/peco-tmux.sh', \
     as:command, \
@@ -194,20 +207,4 @@ if ! zplug check; then
 fi
 
 zplug load
-# }}}
-
-
-#####################
-# other sources
-#####################
-# {{{ other sources
-case ${OSTYPE} in
-    darwin*)
-        load-if-exists ~/.zsh/zshrc.osx
-    ;;
-    linux*)
-        load-if-exists ~/.zsh/zshrc.linux
-    ;;
-esac
-load-if-exists ~/.zsh/zshrc.local
 # }}}

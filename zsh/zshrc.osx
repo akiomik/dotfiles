@@ -12,8 +12,9 @@ path=( \
 )
 
 fpath=( \
+  $HOMEBREW_PREFIX/share/zsh-completions(N-/) \
   $HOMEBREW_PREFIX/share/zsh/functions(N-/) \
-  $fpath
+  $fpath \
 )
 # }}}
 
@@ -119,4 +120,7 @@ zle -N zle-keymap-select
 # {{{ others
 # for japanese
 setopt COMBINING_CHARS
+
+# enable zsh syntac highlighting
+load-if-exists $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }}}
