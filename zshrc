@@ -20,6 +20,21 @@ path=( \
 
 export LANG=ja_JP.UTF-8
 export EDITOR='vim'
+
+# pager
+# LESS_TERMCAP_* can't seems to set in lesskey (and LESSHISTFILE too?)
+# https://unix.stackexchange.com/a/377221
+export PAGER='less'
+export LESSKEY="$HOME/.less/key"
+export LESSHISTFILE="$HOME/.less/hst"
+export LESS_TERMCAP_mb=$'\e[36m'     # mode blink (cyan)
+export LESS_TERMCAP_md=$'\e[34m'     # mode double-bright (blue)
+export LESS_TERMCAP_me=$'\e[0m'      # mode end
+export LESS_TERMCAP_so=$'\e[43;30m'  # stand-out mode (yellow/black)
+export LESS_TERMCAP_se=$'\e[0m'      # stand-out mode end
+export LESS_TERMCAP_us=$'\e[32m'     # underline start (green)
+export LESS_TERMCAP_ue=$'\e[0m'      # underline end
+
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"

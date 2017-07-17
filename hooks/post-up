@@ -7,6 +7,10 @@ if [ ! -e ~/.vim/autoload/plug.vim ]; then
 fi
 vim +PlugInstall +qall < /dev/tty
 
+# compile lesskey
+mkdir -p ~/.less
+lesskey -o ~/.less/key ../less/key
+
 # compile zsh scripts
 zcompile ~/.zshrc
 zcompile ~/.zsh/zshrc.osx
