@@ -1,0 +1,17 @@
+#!/bin/bash
+
+usage() {
+  echo "usage: $(basename $0) filename"
+}
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  usage 1>&2
+  exit 1
+fi
+
+if [ ! -f "$1" ]; then
+  echo "$1: No such file or directory" 1>&2
+  exit 1
+fi
+
+highlight -O ansi --force $1 2> /dev/null | less

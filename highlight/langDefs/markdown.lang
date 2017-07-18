@@ -1,0 +1,20 @@
+Description="Markdown"
+
+Keywords = {
+  {
+    Id = 1,
+    Regex = [[^#+ .*$"]],
+  },
+  {
+    Id = 2,
+    Regex = [[^-+$]],
+  },
+  {
+    Id = 3,
+    Regex = [[^=+$]],
+  }
+}
+
+Strings = {
+  Delimiter = [[`|```]],
+}
