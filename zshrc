@@ -20,6 +20,7 @@ path=( \
 
 export LANG=ja_JP.UTF-8
 export EDITOR='vim'
+export LV="-c"
 
 # pager
 # LESS_TERMCAP_* can't seems to set in lesskey (and LESSHISTFILE too?)
@@ -60,6 +61,7 @@ alias g8-init="g8 n8han/giter8"
 alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias vg="vagrant"
 alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
+alias ack-pager="ack --pager=$PAGER"
 # }}}
 
 
