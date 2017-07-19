@@ -74,14 +74,13 @@ call plug#begin('~/.vim/plugged')
     let g:haskell_shqq = 0
     let g:haskell_rlangqq = 0
     Plug 'akiomik/vim2hs', {'for': 'haskell'}
-    Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'isRuslan/vim-es6', {'for': 'javascript'}
     Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
-    let g:loaded_syntastic_haskell_ghc_mod_checker = 0
     let g:syntastic_scala_checkers = ['fsc']
+    let g:syntastic_haskell_checkers = ['hdevtools']
     " set statusline+=%#warningmsg#
     " set statusline+=%{SyntasticStatuslineFlag()}
     " set statusline+=%*
@@ -90,6 +89,10 @@ call plug#begin('~/.vim/plugged')
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
+
+    " sub checker for haskell
+    " NOTE: ghc-mod is longer supported at syntastic
+    Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     " }}}
 
 

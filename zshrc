@@ -40,6 +40,11 @@ export LESS_TERMCAP_ue=$'\e[0m'      # underline end
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8"
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF-8"
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+
+# haskell
+path=($(stack path --compiler-bin)(N-/) $path) # for hdevtools
+
+# misc
 export ZPLUG_HOME=/usr/local/opt/zplug
 export GIBO_BOILERPLATES="$HOME/.config/git/ignore-boilerplates"
 export NODE_REPL_HISTORY="$HOME/.history/node_repl_history"
