@@ -62,7 +62,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
     Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
     Plug 'rodjek/vim-puppet', {'for': 'puppet'}
-    Plug 'hhvm/vim-hack'
+    Plug 'hhvm/vim-hack', {'for': 'php'}
     au BufNewFile,BufReadPost Routefile setl filetype=ruby
     Plug 'wting/rust.vim', {'for': 'rust'}
     Plug 'fatih/vim-go', {'for': 'go'}
@@ -76,7 +76,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'akiomik/vim2hs', {'for': 'haskell'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'isRuslan/vim-es6', {'for': 'javascript'}
-    Plug 'leafgarland/typescript-vim'
+    Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
