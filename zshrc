@@ -36,11 +36,13 @@ export LESS_TERMCAP_se=$'\e[0m'      # stand-out mode end
 export LESS_TERMCAP_us=$'\e[32m'     # underline start (green)
 export LESS_TERMCAP_ue=$'\e[0m'      # underline end
 
-export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8" # for java/scala charset
-export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF8"    # for java/scala charset
+# java & scala
+export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8"
+export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF-8"
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
 export ZPLUG_HOME=/usr/local/opt/zplug
 export GIBO_BOILERPLATES="$HOME/.config/git/ignore-boilerplates"
+export NODE_REPL_HISTORY="$HOME/.history/node_repl_history"
 # }}}
 
 
@@ -50,18 +52,22 @@ export GIBO_BOILERPLATES="$HOME/.config/git/ignore-boilerplates"
 # {{{ aliases
 alias ls='ls -G'
 alias ll='ls -la'
-alias java="java $JAVA_OPTS"
 alias dstat-full='dstat -Tclmdrn'
 alias dstat-mem='dstat -Tclm'
 alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
-alias sbt-init="sbt new scala/scala-seed.g8"
-alias g8-init="g8 n8han/giter8"
-alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias vg="vagrant"
 alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
 alias ack-pager="ack --pager=$PAGER"
+
+# scala
+SCALA_REPL_HISTORY="$HOME/.history/scala_history"
+SCALA_REPL_OPTS="-Dscala.color -Dscala.shell.histfile=${SCALA_REPL_HISTORY}"
+alias scala="scala $SCALA_REPL_OPTS"
+alias sbt-init="sbt new scala/scala-seed.g8"
+alias g8-init="g8 n8han/giter8"
+alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 # }}}
 
 
