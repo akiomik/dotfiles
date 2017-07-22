@@ -1,0 +1,97 @@
+#compdef hdevtools
+
+typeset -A opt_args
+
+_hdevtools() {
+  local -a commands help_flags admin_flags common_flags
+
+  commands=(
+    'admin:Interactions with the server'
+    'check:Check a haskell source file for errors and warnings'
+    'modulefile:Get the haskell source file corresponding to a module name'
+    'info:Get info from GHC about the specified identifier'
+    'type:Get the type of the expression at the specified line and column'
+    'findsymbol:List the modules where the given symbol could be found'
+  )
+
+  help_flags=(
+    '(- *)'{-h,-\?,--help}'[show help]'
+    '(- *)'{-V,--version}'[show version]'
+    '(- *)--numeric-version[Print just the version number]'
+  )
+
+  admins_flags=(
+    '(- *)--status[show server status]'
+    '--start-server[start server]'
+    '(- *)--stop-server[stop server]'
+    {-n,--nodaemon}'[do not daemonize (only if --start-server)]'
+  )
+
+  _arguments \
+    "1: :{_describe 'command' commands}" \
+    ${help_flags[@]} \
+    ${admins_flags[@]} \
+    '*:: :->args'
+
+  case $state in
+    args)
+      common_flags=(
+        {-g,--ghcopts}'[ghc options]'
+        {-c,--cabalopts}'[cabal options]'
+        {-d,--debug}'[enable debug output]'
+        ${help_flags[@]}
+      )
+
+      case $words[1] in
+        admin)
+          _arguments \
+            ${common_flags[@]} \
+            ${admins_flags[@]} \
+            '--socket[socket file to use]:file:_files'
+          ;;
+        check)
+          _arguments \
+            ${common_flags[@]} \
+            {-s,--socket}'[socket file to use]:file:_files' \
+            {-p,--path}'[path to target file]:file:_files -g "*.hs"' \
+            {-j,--json}'[render output as JSON]' \
+            {-n,--noth}'[disable template haskell]' \
+            '1:file:_files -g "*.hs"'
+          ;;
+        modulefile)
+          _arguments \
+            ${common_flags[@]} \
+            {-s,--socket}'[socket file to use]:file:_files' \
+            '1:module'
+          ;;
+        info)
+          _arguments \
+            ${common_flags[@]} \
+            {-s,--socket}'[socket file to use]:file:_files' \
+            {-p,--path}'[path to target file]:file:_files -g "*.hs"' \
+            {-n,--noth}'[disable template haskell]' \
+            '1:file:_files -g "*.hs"' \
+            '2:identifier'
+          ;;
+        type)
+          _arguments \
+            ${common_flags[@]} \
+            {-s,--socket}'[socket file to use]:file:_files' \
+            {-p,--path}'[path to target file]:file:_files -g "*.hs"' \
+            {-n,--noth}'[disable template haskell]' \
+            '1:file:_files -g "*.hs"' \
+            '2:line' \
+            '3:col'
+          ;;
+        findsymbol)
+          _arguments \
+            ${common_flags[@]} \
+            {-s,--socket}'[socket file to use]:file:_files' \
+            {-n,--noth}'[disable template haskell]' \
+            '1:symbol'
+          ;;
+      esac
+
+      ;;
+  esac
+}

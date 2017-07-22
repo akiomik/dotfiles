@@ -18,6 +18,11 @@ path=( \
   $path \
 )
 
+fpath=( \
+  $ZDOTDIR/completion(N-/) \
+  $fpath \
+)
+
 export LANG=ja_JP.UTF-8
 export EDITOR='vim'
 export LV="-c"
@@ -89,6 +94,10 @@ setopt auto_list
 setopt list_types
 setopt auto_menu
 zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
 # }}}
 
 
