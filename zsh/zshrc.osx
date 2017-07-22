@@ -65,49 +65,48 @@ alias top="htop"
 
 # set normal and insert mode
 function zle-line-init zle-keymap-select {
-    vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
-    _update-status-line $vimode
+  local vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
+  _update-status-line $vimode
 }
 
 # update status line
 function _update-status-line {
-  vimode=$1
+  local vimode=$1
 
   if [ -n "$TMUX" ]; then
-      # tmux
-      statfg="colour7"
-      statbg="colour0"
-      statl1fg="colour15"
-      statl1bg="colour8"
-      statl2fg="colour234"
-      statl2bg="colour10"
-      statr1fg="colour234"
-      statr1bg="colour7"
-      statr2fg="colour234"
-      statr2bg="colour7"
+    # tmux
+    local statfg="colour7"
+    local statbg="colour0"
+    local statl1fg="colour15"
+    local statl1bg="colour8"
+    local statl2fg="colour234"
+    local statr1fg="colour234"
+    local statr1bg="colour7"
+    local statr2fg="colour234"
+    local statr2bg="colour7"
 
-      if [ $vimode = "NORMAL" ]; then
-          statl2bg="colour10"
-      elif [ $vimode = "VISUAL" ]; then
-          statl2bg="colour3"
-      else
-          statl2bg="colour12"
-      fi
+    if [ $vimode = "NORMAL" ]; then
+      local statl2bg="colour10"
+    elif [ $vimode = "VISUAL" ]; then
+      local statl2bg="colour3"
+    else
+      local statl2bg="colour12"
+    fi
 
-      tmux set -g status-bg ${statbg} > /dev/null
-      tmux set -g status-fg ${statfg} > /dev/null
-      statl1="#[bg=${statl1bg}, fg=${statl1fg}] #H "
-      statl1a="#[bg=${statbg}, fg=${statl1bg}]"
-      statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
-      statl2a="#[bg=${statl1bg}, fg=${statl2bg}]"
-      tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
-      statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/bin/battery) "
-      statr1a="#[bg=${statbg}, fg=${statr1bg}]"
-      statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
-      statr2a="#[bg=${statr1bg}, fg=${statr2bg}]"
-      tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
+    tmux set -g status-bg ${statbg} > /dev/null
+    tmux set -g status-fg ${statfg} > /dev/null
+    local statl1="#[bg=${statl1bg}, fg=${statl1fg}] #H "
+    local statl1a="#[bg=${statbg}, fg=${statl1bg}]"
+    local statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
+    local statl2a="#[bg=${statl1bg}, fg=${statl2bg}]"
+    tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
+    local statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/bin/battery) "
+    local statr1a="#[bg=${statbg}, fg=${statr1bg}]"
+    local statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
+    local statr2a="#[bg=${statr1bg}, fg=${statr2bg}]"
+    tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
   fi
- }
+}
 
 zle -N zle-line-init
 zle -N zle-keymap-select
