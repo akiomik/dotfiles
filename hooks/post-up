@@ -11,7 +11,14 @@ vim +PlugInstall +qall < /dev/tty
 mkdir -p ~/.less
 lesskey -o ~/.less/key ../less/key
 
-# compile zsh scripts
-zcompile ~/.zshrc
-zcompile ~/.zsh/zshrc.osx
-zcompile ~/.zsh/zshrc.linux
+for file in $(ls -1 $ZDOTDIR/zshrc*); do
+  dotfile="$ZDOTDIR/.$(basename $file)"
+
+  # create dot-prefixed symlink
+  if [[ ! -e $dotfile ]]; then
+    ln -s $file $dotfile
+  fi
+
+  # compile zsh script
+  zcompile $dotfile
+done

@@ -135,7 +135,7 @@ RPROMPT='${vcs_info_msg_0_}'
 # history
 #####################
 # {{{ history
-HISTFILE=$HOME/.zsh/zsh_history
+HISTFILE=$ZDOTDIR/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt extended_history
@@ -204,13 +204,13 @@ fi
 # {{{ other sources
 case ${OSTYPE} in
     darwin*)
-        load-if-exists ~/.zsh/zshrc.osx
+        load-if-exists $ZDOTDIR/.zshrc.osx
     ;;
     linux*)
-        load-if-exists ~/.zsh/zshrc.linux
+        load-if-exists $ZDOTDIR/.zshrc.linux
     ;;
 esac
-load-if-exists ~/.zsh/zshrc.local
+load-if-exists $ZDOTDIR/.zshrc.local
 # }}}
 
 
