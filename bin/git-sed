@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function usage() {
+  echo "usage: git sed <search word> <replacement word>"
+}
+
+if [[ -z $1 ]]; then
+  usage
+  exit 1
+fi
+
+git grep -lz "$1" | xargs -0 sed -i '' -e "s/$1/$2/g"
