@@ -18,6 +18,8 @@ se fdm=marker
 se nowrap
 se bsk=/tmp/*,/private/tmp/*
 se clipboard=unnamed
+se ml
+se mls=5
 
 " my autocmds
 " {{{ my autocmds
