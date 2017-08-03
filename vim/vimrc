@@ -21,6 +21,10 @@ se clipboard=unnamed
 se ml
 se mls=5
 
+if !has("nvim")
+  se vi+=n~/.vim/viminfo
+endif
+
 " my autocmds
 " {{{ my autocmds
 if has("autocmd")
