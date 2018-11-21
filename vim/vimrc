@@ -45,6 +45,9 @@ if &diff
     map <Leader>2 :diffget BASE<CR>
     map <Leader>3 :diffget REMOTE<CR>
 endif
+
+" reloading file
+map <F5> :e!<CR>
 " }}}
 
 
@@ -83,7 +86,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'akiomik/vim2hs', {'for': 'haskell'}
     Plug 'isRuslan/vim-es6', {'for': 'javascript'}
     Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+    Plug 'gre/play2vim' " for .scala.html, application.conf, routes
 
+    Plug 'w0rp/ale'
     Plug 'scrooloose/syntastic'
     let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
     let g:syntastic_scala_checkers = ['fsc']
