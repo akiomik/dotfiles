@@ -16,6 +16,8 @@
 [merge]
     ff = false
     tool = vimdiff
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
 [pull]
     rebase = true
 [alias]
@@ -34,7 +36,7 @@
     browse = !hub browse -- tree/$(git rev-parse --abbrev-ref HEAD)
     issue = !hub browse -- issues/$(git rev-parse --abbrev-ref HEAD | cut -d '-' -f 2)
 [core]
-    editor = vim
+    editor = nvim
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
