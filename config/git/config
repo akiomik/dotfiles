@@ -37,6 +37,7 @@
     issue = !hub browse -- issues/$(git rev-parse --abbrev-ref HEAD | cut -d '-' -f 2)
 [core]
     editor = nvim
+    quotepath = false
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less

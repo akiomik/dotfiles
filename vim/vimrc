@@ -20,6 +20,7 @@ se bsk=/tmp/*,/private/tmp/*
 se clipboard=unnamed
 se ml
 se mls=5
+se ambiwidth=double
 
 if !has("nvim")
   se vi+=n~/.vim/viminfo
