@@ -76,8 +76,8 @@ SCALA_REPL_HISTORY="$HOME/.history/scala_history"
 SCALA_REPL_OPTS="-Dscala.color -Dscala.shell.histfile=${SCALA_REPL_HISTORY}"
 alias scala="scala $SCALA_REPL_OPTS"
 alias sbt-init="sbt new scala/scala-seed.g8"
-alias g8-init="g8 n8han/giter8"
-alias android-init="g8 akiomik/android-pfn-app -b feature/upgrade-sbt-version"
+alias android-init="sbt new akiomik/android-pfn-app -b feature/upgrade-sbt-version"
+alias play-init="sbt new playframework/play-scala-seed.g8"
 # }}}
 
 
