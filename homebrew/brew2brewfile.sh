@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # initialize
-file=Brewfile
+file=`dirname $0`/Brewfile
 cat /dev/null > $file
 
 # write taps
@@ -21,3 +21,5 @@ casks=`brew cask list`
 for cask in $casks; do
     echo "cask '$cask'" >> $file
 done
+
+echo "$file generated successfully."
