@@ -110,7 +110,7 @@ call plug#begin('~/.vim/plugged')
     " colorscheme
     " {{{ colorscheme
     Plug 'w0ng/vim-hybrid'
-    Plug 'cocopon/lightline-hybrid.vim'
+    Plug 'akiomik/lightline-hybrid.vim', { 'branch': 'patch-1' }
     " }}}
 
 
@@ -131,6 +131,26 @@ call plug#begin('~/.vim/plugged')
           \   'ctrlpmark': 'CtrlPMark',
           \ },
     \ }
+
+    " lightline-ale
+    Plug 'maximbaz/lightline-ale'
+    let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+    \ }
+    let g:lightline.component_type = {
+      \  'linter_checking': 'left',
+      \  'linter_warnings': 'warning',
+      \  'linter_errors': 'error',
+      \  'linter_ok': 'left',
+    \ }
+    let g:lightline.active = { 'right': [
+      \ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \ [ 'percent', 'lineinfo' ],
+      \ [ 'fileformat', 'fileencoding', 'filetype' ],
+    \ ]}
 
     " {{{ CtrlPMark()
     function! CtrlPMark()
@@ -302,6 +322,8 @@ call plug#end()
 " {{{ colorscheme
 se t_Co=256
 se bg=dark
+let g:hybrid_custom_term_colors = 1
+" let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 colorscheme hybrid
 " }}}
 
