@@ -65,7 +65,6 @@ call plug#begin('~/.vim/plugged')
     " syntax & format
     " {{{ syntax & format
     au BufNewFile,BufReadPost *.gradle setl filetype=groovy
-    au BufNewFile,BufReadPost *.md setl filetype=markdown
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
     au BufNewFile,BufReadPost *.sbt setl filetype=scala
     Plug 'slim-template/vim-slim', {'for': 'slim'}
@@ -75,7 +74,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'hhvm/vim-hack', {'for': 'php'}
     au BufNewFile,BufReadPost Routefile setl filetype=ruby
     Plug 'wting/rust.vim', {'for': 'rust'}
-    Plug 'fatih/vim-go', {'for': 'go'}
     au BufNewFile,BufReadPost *.hbs setl filetype=handlebars
     Plug 'mustache/vim-mustache-handlebars', {'for': 'handlebars'}
     let g:haskell_conceal = 0
@@ -89,9 +87,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'gre/play2vim' " for .scala.html, application.conf, routes
 
     Plug 'w0rp/ale'
-    Plug 'scrooloose/syntastic'
-    let g:syntastic_java_javac_options="-J-Dfile.encoding=UTF-8 -Xlint"
-    let g:syntastic_scala_checkers = ['fsc']
+    let g:ale_linters = {'scala': ['fsc']}
+    let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
+
+    " Plug 'scrooloose/syntastic'
     let g:syntastic_haskell_checkers = ['hdevtools']
     " set statusline+=%#warningmsg#
     " set statusline+=%{SyntasticStatuslineFlag()}
