@@ -100,8 +100,8 @@ function _update-status-line {
     local statl2="#[bg=${statl2bg}, fg=${statl2fg}] $vimode "
     local statl2a="#[bg=${statl1bg}, fg=${statl2bg}]"
     tmux set -g status-left "${statl2}${statl2a}${statl1}${statl1a}" > /dev/null
-    local statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/bin/battery) "
-    local statr1a="#[bg=${statbg}, fg=${statr1bg}]"
+    # local statr1="#[bg=${statr1bg}, fg=${statr1fg}] #($HOME/bin/battery) "
+    # local statr1a="#[bg=${statbg}, fg=${statr1bg}]"
     local statr2="#[bg=${statr2bg}, fg=${statr2fg}] %Y-%m-%d(%a) %H:%M "
     local statr2a="#[bg=${statr1bg}, fg=${statr2bg}]"
     tmux set -g status-right "${statr1a}${statr1}${statr2a}${statr2}" > /dev/null
