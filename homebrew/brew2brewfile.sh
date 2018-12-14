@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # initialize
 file=`dirname $0`/Brewfile
 cat /dev/null > $file
@@ -12,8 +14,8 @@ done
 
 # write leaves
 leaves=`brew leaves`
-for leave in $leaves; do
-    echo "brew '$leave'" >> $file
+for leaf in $leaves; do
+    echo "brew '$leaf'" >> $file
 done
 
 # write casks
