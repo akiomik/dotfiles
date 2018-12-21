@@ -110,7 +110,7 @@ call plug#begin('~/.vim/plugged')
     " colorscheme
     " {{{ colorscheme
     Plug 'w0ng/vim-hybrid'
-    Plug 'akiomik/lightline-hybrid.vim', { 'branch': 'patch-1' }
+    Plug 'cocopon/lightline-hybrid.vim'
     " }}}
 
 
