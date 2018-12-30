@@ -167,18 +167,19 @@ zle -A .backward-delete-char vi-backward-delete-char
 # additional vim keybinds
 # -v is insert mode.
 # -a is command mode.
-bindkey -v '^A' vi-beginning-of-line
-bindkey -v '^E' vi-end-of-line
-bindkey -v '^U' kill-whole-line
+bindkey -v '^a' vi-beginning-of-line
+bindkey -v '^e' vi-end-of-line
+bindkey -v '^u' kill-whole-line
 
 # show command line stack
 show_buffer_stack() {
-  POSTDISPLAY="\nstack: $LBUFFER"
+  POSTDISPLAY="
+stack: $LBUFFER"
   zle push-line-or-edit
 }
 zle -N show_buffer_stack
 setopt noflowcontrol
-bindkey -v '^S' show_buffer_stack
+bindkey -v '^s' show_buffer_stack
 # }}}
 
 
@@ -236,8 +237,7 @@ zplug 'b4b4r07/peco-tmux.sh', \
 
 zplug 'b4b4r07/emoji-cli'
 export EMOJI_CLI_FILTER="peco-tmux:peco"
-bindkey '^xe' emoji::cli
-bindkey '^x^e' emoji::cli
+export EMOJI_CLI_KEYBIND="^k"
 
 if ! zplug check; then
   zplug install
