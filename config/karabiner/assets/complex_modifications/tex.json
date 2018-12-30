@@ -1,0 +1,50 @@
+{
+  "title": "for TEX YODA",
+  "rules": [{
+    "description": "ctrl+left_click to middle_click",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "pointing_button": "button1",
+        "modifiers": {
+          "mandatory": [
+            "control"
+          ]
+        }
+      },
+      "to": [{
+        "pointing_button": "button3"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
+  }, {
+    "description": "ctrl+[ to esc",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "open_bracket",
+        "modifiers": {
+          "mandatory": [
+            "control"
+          ]
+        }
+      },
+      "to": [{
+        "key_code": "escape"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
+  }]
+}
