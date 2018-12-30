@@ -1,8 +1,8 @@
 #!/usr/local/bin/zsh
 
 # create symlinks for neovim
-if [[ ! -e ~/.config/nvim ]]; then
-  ln -s ~/.vim ~/.config/nvim
+if [[ ! -e ~/.vim ]]; then
+  ln -s ~/.config/nvim ~/.vim
 fi
 
 # install vim plugins
