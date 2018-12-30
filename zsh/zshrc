@@ -173,9 +173,8 @@ bindkey -v '^U' kill-whole-line
 
 # show command line stack
 show_buffer_stack() {
-    POSTDISPLAY="
-stack: $LBUFFER"
-    zle push-line-or-edit
+  POSTDISPLAY="\nstack: $LBUFFER"
+  zle push-line-or-edit
 }
 zle -N show_buffer_stack
 setopt noflowcontrol
@@ -201,9 +200,9 @@ autoload zargs
 # for ssh-agent
 ssh_auth_sock="$HOME/.ssh/ssh_auth_sock"
 if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$ssh_auth_sock" ]; then
-    echo "old SSH_AUTH_SOCK is $SSH_AUTH_SOCK"
-    echo "new SSH_AUTH_SOCK is $ssh_auth_sock"
-    ln -sf $SSH_AUTH_SOCK $ssh_auth_sock && SSH_AUTH_SOCK=$ssh_auth_sock
+  echo "old SSH_AUTH_SOCK is $SSH_AUTH_SOCK"
+  echo "new SSH_AUTH_SOCK is $ssh_auth_sock"
+  ln -sf $SSH_AUTH_SOCK $ssh_auth_sock && SSH_AUTH_SOCK=$ssh_auth_sock
 fi
 # }}}
 
@@ -213,12 +212,12 @@ fi
 #####################
 # {{{ other sources
 case ${OSTYPE} in
-    darwin*)
-        load-if-exists $ZDOTDIR/.zshrc.osx
-    ;;
-    linux*)
-        load-if-exists $ZDOTDIR/.zshrc.linux
-    ;;
+  darwin*)
+    load-if-exists $ZDOTDIR/.zshrc.osx
+  ;;
+  linux*)
+    load-if-exists $ZDOTDIR/.zshrc.linux
+  ;;
 esac
 load-if-exists $ZDOTDIR/.zshrc.local
 # }}}
@@ -231,9 +230,9 @@ load-if-exists $ZDOTDIR/.zshrc.local
 source $ZPLUG_HOME/init.zsh # zplug
 
 zplug 'b4b4r07/peco-tmux.sh', \
-    as:command, \
-    use:'(*).sh', \
-    rename-to:'$1'
+  as:command, \
+  use:'(*).sh', \
+  rename-to:'$1'
 
 zplug 'b4b4r07/emoji-cli'
 export EMOJI_CLI_FILTER="peco-tmux:peco"

@@ -3,7 +3,7 @@
 #####################
 # {{{ functions
 function is-ubuntu-or-debian() {
-    which lsb_release >/dev/null 2>&1 && lsb_release -si | grep -E 'Ubuntu|Debian' >/dev/null 2>&1
+  which lsb_release >/dev/null 2>&1 && lsb_release -si | grep -E 'Ubuntu|Debian' >/dev/null 2>&1
 }
 # }}}
 
@@ -13,11 +13,11 @@ function is-ubuntu-or-debian() {
 #####################
 # {{{ export
 is-ubuntu-or-debian && {
-    export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
-    path=( \
-      $GEM_BIN(N-/) \
-      $path \
-    )
+  export GEM_BIN=$(ruby -e 'require "rubygems"; puts Gem::bindir')
+  path=( \
+    $GEM_BIN(N-/) \
+    $path \
+  )
 }
 # }}}
 

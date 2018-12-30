@@ -1,49 +1,49 @@
 [user]
-    email = akiomik@gmail.com
-    name = "Akiomi Kamakura"
+  email = akiomik@gmail.com
+  name = "Akiomi Kamakura"
 [include]
-    path = ~/.config/git/config.local
+  path = ~/.config/git/config.local
 [color]
-    ui = true
+  ui = true
 [color "diff"]
-    meta = red bold
-    frag = magenta bold
-    commit = cyan
-    # func = red
-    # old = red reverse
-    # new = green reverse
-    # whitespace = white reverse
+  meta = red bold
+  frag = magenta bold
+  commit = cyan
+  # func = red
+  # old = red reverse
+  # new = green reverse
+  # whitespace = white reverse
 [merge]
-    ff = false
-    tool = vimdiff
+  ff = false
+  tool = vimdiff
 [mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
 [pull]
-    rebase = true
+  rebase = true
 [alias]
-    br = branch
-    ci = commit -a
-    co = checkout
-    st = status
-    su = submodule update
-    si = submodule init
-    up = pull
-    upstream = remote add upstream
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    ld-merged = !git branch --merged | grep -v \\* | grep -v master | grep -v develop | xargs -I % git branch -d %
-    ignore = !gibo
-    browse = !hub browse -- tree/$(git rev-parse --abbrev-ref HEAD)
-    issue = !hub browse -- issues/$(git rev-parse --abbrev-ref HEAD | cut -d '-' -f 2)
+  br = branch
+  ci = commit -a
+  co = checkout
+  st = status
+  su = submodule update
+  si = submodule init
+  up = pull
+  upstream = remote add upstream
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ld-merged = !git branch --merged | grep -v \\* | grep -v master | grep -v develop | xargs -I % git branch -d %
+  ignore = !gibo
+  browse = !hub browse -- tree/$(git rev-parse --abbrev-ref HEAD)
+  issue = !hub browse -- issues/$(git rev-parse --abbrev-ref HEAD | cut -d '-' -f 2)
 [core]
-    editor = nvim
-    quotepath = false
+  editor = nvim
+  quotepath = false
 [pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [diff "scala"]
-    xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
+  xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
 [push]
 	default = simple
 [ghq]
