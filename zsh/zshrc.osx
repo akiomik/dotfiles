@@ -11,6 +11,7 @@ path=( \
   $path \
 )
 
+# NOTE: homebrewのzshの関数を読み込むのはログインシェルのバージョンと不整合を起こす可能性がある
 fpath=( \
   $HOMEBREW_PREFIX/share/zsh-completions(N-/) \
   $HOMEBREW_PREFIX/share/zsh/functions(N-/) \

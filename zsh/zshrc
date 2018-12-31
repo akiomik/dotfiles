@@ -244,4 +244,8 @@ if ! zplug check; then
 fi
 
 zplug load
+
+# NOTE: fixing `(eval):setopt:3: no such option: NO_warnnestedvar`
+#       このエラーはtmux外とtmuxで引き継いでいる環境変数が違うことに起因している
+_comp_options=(${_comp_options/NO_warnnestedvar/})
 # }}}

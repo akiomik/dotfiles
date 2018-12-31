@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 # create symlinks for neovim
 if [[ ! -e ~/.vim ]]; then
