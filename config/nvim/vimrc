@@ -299,8 +299,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
 
 
-  " search highlight
+  " %s highlight
   Plug 'osyo-manga/vim-over'
+  map <C-s> :OverCommandLine<CR>
 
 
   " git
