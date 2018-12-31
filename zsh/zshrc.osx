@@ -7,7 +7,6 @@ export HOMEBREW_PREFIX="/usr/local"
 path=( \
   $HOME/bin/mkscaladocset(N-/) \
   $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
-  $HOMEBREW_PREFIX/opt/giter8/libexec/conscript/bin(N-/) \
   $path \
 )
 
@@ -33,37 +32,6 @@ alias top="htop"
 # vi mode line
 #####################
 # {{{ vim mode line
-# hook visual mode keymap
-# TODO: 移動系のキーは除外する
-# bindkey -M vicmd | while read key widget;
-# do
-#   key=$(echo $key | sed 's/^"\(.*\)"$/\1/')
-#
-#   if [ "$key" = '"' ]; then
-#     # when key is space
-#     widget=$(echo $widget | sed 's/^" //' )
-#     key=" "
-#   elif [ "$key" = '-' ]; then
-#     # when key is flag
-#     key='\-'
-#   fi
-#
-#   if [ "$widget" = "visual-mode" ]; then
-#     # TODO: VISUAL時にvでNORMALに戻るようにする
-#     mode="VISUAL"
-#   else
-#     mode="NORMAL"
-#   fi
-#
-#   wrapper="${widget}-wrap"
-#   eval "function $wrapper {
-#     _update-status-line $mode
-#     zle $widget
-#   }"
-#   zle -N $wrapper
-#   bindkey -a $key $wrapper
-# done
-
 # set normal and insert mode
 function zle-line-init zle-keymap-select {
   local vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
