@@ -46,5 +46,97 @@
         }]
       }]
     }]
+  }, {
+    "description": "shift+f1 to display_brightness_decrement",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "f1",
+        "modifiers": {
+          "mandatory": [
+            "shift"
+          ]
+        }
+      },
+      "to": [{
+        "key_code": "display_brightness_decrement"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
+  }, {
+    "description": "shift+f2 to display_brightness_increment",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "f2",
+        "modifiers": {
+          "mandatory": [
+            "shift"
+          ]
+        }
+      },
+      "to": [{
+        "key_code": "display_brightness_increment"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
+  }, {
+    "description": "shift+f11 to volume_decrement",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "f11",
+        "modifiers": {
+          "mandatory": [
+            "shift"
+          ]
+        }
+      },
+      "to": [{
+        "key_code": "volume_decrement"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
+  }, {
+    "description": "shift+f12 to volume_increment",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "f12",
+        "modifiers": {
+          "mandatory": [
+            "shift"
+          ]
+        }
+      },
+      "to": [{
+        "key_code": "volume_increment"
+      }],
+      "conditions": [{
+        "type": "device_if",
+        "identifiers": [{
+          "vendor_id": 1241,
+          "product_id": 276
+        }]
+      }]
+    }]
   }]
 }
