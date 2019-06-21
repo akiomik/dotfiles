@@ -20,7 +20,7 @@ se bsk=/tmp/*,/private/tmp/*
 se clipboard=unnamed
 se ml
 se mls=5
-se ambiwidth=double
+" se ambiwidth=double " hyper上ではsingleのままのほうが問題が少ない
 
 if !has("nvim")
   se vi+=n~/.vim/viminfo
