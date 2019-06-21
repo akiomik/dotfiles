@@ -77,8 +77,10 @@ SCALA_REPL_HISTORY="$HOME/.history/scala_history"
 SCALA_REPL_OPTS="-Dscala.color -Dscala.shell.histfile=${SCALA_REPL_HISTORY}"
 alias scala="scala $SCALA_REPL_OPTS"
 alias sbt-init="sbt new scala/scala-seed.g8"
+alias akka-init="sbt new akka/akka-quickstart-scala.g8"
 alias android-init="sbt new akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias play-init="sbt new playframework/play-scala-seed.g8"
+alias finch-init="sbt new finch/finch.g8"
 # }}}
 
 
