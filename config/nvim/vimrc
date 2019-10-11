@@ -86,6 +86,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
   Plug 'gre/play2vim' " for .scala.html, application.conf, routes
   au BufNewFile,BufReadPost *.scala.template setl filetype=scala
+  Plug 'posva/vim-vue', {'for': 'vue'}
 
   Plug 'dense-analysis/ale'
   let g:ale_linters = {'scala': ['fsc'], 'python': ['flake8', 'mypy']}
