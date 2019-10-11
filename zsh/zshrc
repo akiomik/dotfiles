@@ -118,6 +118,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 #####################
 # {{{ functions
 function load-if-exists() { [ -f "$1" ] && source "$1" }
+function urlencode { node -p "encodeURIComponent('$1')" }
 # }}}
 
 
