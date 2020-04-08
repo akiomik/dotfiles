@@ -339,6 +339,19 @@ call plug#begin('~/.vim/plugged')
   let g:nerdtree_tabs_open_on_console_startup=1
   " close nerdtree automatically
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  " Plug 'cocopon/vaffle.vim'
+  " Plug 'justinmk/vim-dirvish'
+  " function! s:open_vaffle()
+  "   vertical 30 new
+  "   silent! exe 'Vaffle'
+  "   wincmd l
+  "   wincmd h
+  "   wincmd l
+  " endfunction
+  " augroup OpenVaffle
+  "   au!
+  "   autocmd VimEnter * call s:open_vaffle()
+  " augroup END
 
   Plug 'ctrlpvim/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip
