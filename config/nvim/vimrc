@@ -87,9 +87,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'gre/play2vim' " for .scala.html, application.conf, routes
   au BufNewFile,BufReadPost *.scala.template setl filetype=scala
   Plug 'posva/vim-vue', {'for': 'vue'}
+  au BufNewFile,BufReadPost *.agda setl filetype=agda
 
-  Plug 'dense-analysis/ale'
-  let g:ale_linters = {'scala': ['fsc'], 'python': ['flake8', 'mypy']}
+  " Plug 'dense-analysis/ale'
+  Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
+  let g:ale_fixers = {
+    \ 'javascript': ['eslint'],
+    \ 'typescript': ['prettier'],
+    \ 'vue': ['eslint'],
+    \ 'ruby': ['rubocop'],
+  \ }
+  let g:ale_linters = {
+    \ 'scala': ['metals'],
+    \ 'python': ['flake8', 'mypy'],
+    \ 'ruby': ['rubocop'],
+  \ }
   let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
   let g:ale_lint_on_text_changed = 1
 
