@@ -8,6 +8,9 @@ path=( \
   "$HOME/Library/Application Support/Coursier/bin"(N-/) \
   $HOME/bin/mkscaladocset(N-/) \
   $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
+  /usr/local/opt/icu4c/bin(N-/) \
+  /usr/local/opt/icu4c/sbin(N-/) \
+  $HOMEBREW_PREFIX/sbin(N-/) \
   $path \
 )
 
