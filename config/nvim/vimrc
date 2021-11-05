@@ -90,7 +90,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'gre/play2vim' " for .scala.html, application.conf, routes
   au BufNewFile,BufReadPost *.scala.template setl filetype=scala
   Plug 'posva/vim-vue', {'for': 'vue'}
+  au BufNewFile,BufReadPost *.ipynb setl filetype=json
   au BufNewFile,BufReadPost *.agda setl filetype=agda
+  au BufNewFile,BufReadPost *.vader setl filetype=vim
+  Plug 'evanleck/vim-svelte', {'branch': 'main', 'for': 'svelte'}
+  Plug 'mesonbuild/meson', {'do': 'cp -R data/syntax-highlighting/vim/* .'}
+  Plug 'cespare/vim-toml', {'for': 'toml'}
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
@@ -127,7 +132,7 @@ call plug#begin('~/.vim/plugged')
 
   " laungage server protocols support
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile', 'for': 'scala'}
   Plug 'neoclide/coc-solargraph', {'for': 'ruby'}
   " }}}
 
