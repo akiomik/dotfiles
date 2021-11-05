@@ -359,7 +359,9 @@ call plug#begin('~/.vim/plugged')
   " {{{ filer
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
-  let g:nerdtree_tabs_open_on_console_startup=1
+  if !has('gui_running')
+    let g:nerdtree_tabs_open_on_console_startup=1
+  end
   " close nerdtree automatically
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   " Plug 'cocopon/vaffle.vim'
