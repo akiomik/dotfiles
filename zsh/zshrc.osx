@@ -5,6 +5,7 @@
 export HOMEBREW_PREFIX="/usr/local"
 
 path=( \
+  "$HOME/Library/Application Support/Coursier/bin"(N-/) \
   $HOME/bin/mkscaladocset(N-/) \
   $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
   $path \

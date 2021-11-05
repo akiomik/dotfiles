@@ -45,7 +45,7 @@ export LESS_TERMCAP_ue=$'\e[0m'      # underline end
 # java & scala
 export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8"
 export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF-8"
-export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+CMSClassUnloadingEnabled"
 
 # haskell
 path=($(stack path --compiler-bin)(N-/) $path) # for hdevtools
@@ -76,7 +76,7 @@ alias ack-pager="ack --pager=$PAGER"
 SCALA_REPL_HISTORY="$HOME/.history/scala_history"
 SCALA_REPL_OPTS="-Dscala.color -Dscala.shell.histfile=${SCALA_REPL_HISTORY}"
 alias scala="scala $SCALA_REPL_OPTS"
-alias sbt-init="sbt new scala/scala-seed.g8"
+alias sbt-init="sbt new scala/scala3.g8"
 alias akka-init="sbt new akka/akka-quickstart-scala.g8"
 alias android-init="sbt new akiomik/android-pfn-app -b feature/upgrade-sbt-version"
 alias play-init="sbt new playframework/play-scala-seed.g8"
