@@ -126,21 +126,11 @@ function urlencode { node -p "encodeURIComponent('$1')" }
 # prompt
 #####################
 # {{{ prompt
+eval "$(starship init zsh)"
+
 setopt prompt_subst
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
-precmd () { vcs_info }
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr     '%F{yellow}'           # %c
-zstyle ':vcs_info:git:*' unstagedstr   '%F{red}'              # %u
-zstyle ':vcs_info:*'     formats       '%F{green}%c%u%b%f'    # %b: branch
-zstyle ':vcs_info:*'     actionformats '%F{green}%c%u%b:%a%f' # %a: action
-PROMPT="
-%~
-%(?.%F{green}❯%f.%F{red}❯%f) "
-PROMPT2="%F{blue}%_> %f"
 SPROMPT="%F{magenta}correct: %R -> %r [n/y/a/e]? %f"
-RPROMPT='${vcs_info_msg_0_}'
+RPROMPT='$(git branch-status --mode zsh)'
 # }}}
 
 
