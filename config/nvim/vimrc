@@ -73,6 +73,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'rodjek/vim-puppet', {'for': 'puppet'}
   Plug 'hhvm/vim-hack', {'for': 'php'}
   au BufNewFile,BufReadPost Routefile setl filetype=ruby
+  au BufNewFile,BufReadPost *.ruby setl filetype=ruby
+  au BufNewFile,BufReadPost *.json.jb setl filetype=ruby
+  au BufNewFile,BufReadPost *.thor setl filetype=ruby
   Plug 'wting/rust.vim', {'for': 'rust'}
   au BufNewFile,BufReadPost *.hbs setl filetype=handlebars
   Plug 'mustache/vim-mustache-handlebars', {'for': 'handlebars'}
@@ -104,6 +107,8 @@ call plug#begin('~/.vim/plugged')
   \ }
   let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
   let g:ale_lint_on_text_changed = 1
+  let g:ale_fix_on_save = 1
+  let g:ale_ruby_rubocop_options = '-a'
 
   " Plug 'scrooloose/syntastic'
   let g:syntastic_haskell_checkers = ['hdevtools']
@@ -123,6 +128,7 @@ call plug#begin('~/.vim/plugged')
   " laungage server protocols support
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-solargraph', {'for': 'ruby'}
   " }}}
 
   " coc settings for scala (metals)
