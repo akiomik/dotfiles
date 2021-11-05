@@ -20,6 +20,10 @@
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
 [pull]
   rebase = true
+[rebase]
+  autosquash = true
+[fetch]
+  prune = true
 [alias]
   br = branch
   ci = commit -a
@@ -50,3 +54,5 @@
 	root = ~/src
 [interactive]
   diffFilter = diff-highlight
+[init]
+	defaultBranch = main
