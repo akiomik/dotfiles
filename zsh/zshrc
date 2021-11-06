@@ -5,6 +5,16 @@
 
 
 #####################
+# homebrew
+#####################
+# {{{ homebrew
+# TODO: macosに依存しないようにしたい
+eval "$(/opt/homebrew/bin/brew shellenv)" # for m1
+BREW_PREFIX=$(brew --prefix) # homebrewの挙動を変えないためにHOMEBREW_PREFIXは使わない
+# }}}
+
+
+#####################
 # export variables
 #####################
 # {{{ export
@@ -51,7 +61,7 @@ export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+CMSClassUnloadingEnabled"
 path=($(stack path --compiler-bin)(N-/) $path) # for hdevtools
 
 # misc
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME="$BREW_PREFIX/opt/zplug"
 export GIBO_BOILERPLATES="$HOME/.config/git/ignore-boilerplates"
 export NODE_REPL_HISTORY="$HOME/.history/node_repl_history"
 # }}}

@@ -2,22 +2,20 @@
 # export variables
 #####################
 # {{{ export
-export HOMEBREW_PREFIX="/usr/local"
-
 path=( \
   "$HOME/Library/Application Support/Coursier/bin"(N-/) \
   $HOME/bin/mkscaladocset(N-/) \
-  $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
-  /usr/local/opt/icu4c/bin(N-/) \
-  /usr/local/opt/icu4c/sbin(N-/) \
-  $HOMEBREW_PREFIX/sbin(N-/) \
+  $BREW_PREFIX/share/git-core/contrib/diff-highlight(N-/) \
+  $BREW_PREFIX/opt/icu4c/bin(N-/) \
+  $BREW_PREFIX/opt/icu4c/sbin(N-/) \
+  $BREW_PREFIX/sbin(N-/) \
   $path \
 )
 
 # NOTE: homebrewのzshの関数を読み込むのはログインシェルのバージョンと不整合を起こす可能性がある
 fpath=( \
-  $HOMEBREW_PREFIX/share/zsh-completions(N-/) \
-  $HOMEBREW_PREFIX/share/zsh/functions(N-/) \
+  $BREW_PREFIX/share/zsh-completions(N-/) \
+  $BREW_PREFIX/share/zsh/functions(N-/) \
   $fpath \
 )
 # }}}
@@ -94,5 +92,5 @@ zle -N zle-keymap-select
 setopt COMBINING_CHARS
 
 # enable zsh syntac highlighting
-load-if-exists $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+load-if-exists $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }}}
