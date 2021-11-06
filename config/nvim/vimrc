@@ -96,6 +96,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'evanleck/vim-svelte', {'branch': 'main', 'for': 'svelte'}
   Plug 'mesonbuild/meson', {'do': 'cp -R data/syntax-highlighting/vim/* .'}
   Plug 'cespare/vim-toml', {'for': 'toml'}
+  Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
