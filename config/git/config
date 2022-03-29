@@ -1,6 +1,7 @@
 [user]
   email = akiomik@gmail.com
   name = "Akiomi Kamakura"
+  signingkey = FCA1E1F1A60AEC17E8DB11DD7803155EB5BC40ED
 [include]
   path = ~/.config/git/config.local
 [color]
@@ -49,10 +50,14 @@
 [diff "scala"]
   xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
 [push]
-	default = simple
+  default = simple
 [ghq]
-	root = ~/src
+  root = ~/src
 [interactive]
   diffFilter = diff-highlight
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[gpg]
+  program = gpg
+[commit]
+  gpgsign = true
