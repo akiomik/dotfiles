@@ -1,5 +1,6 @@
 format = """
 $directory\
+$custom\
 $line_break\
 $character"""
 
@@ -7,3 +8,8 @@ $character"""
 format = "$path"	
 truncation_length = 1000
 # truncate_to_repo = false
+
+[custom.branchstatus]
+command = "git branch-status --mode zsh"
+when = "[[ -d .git ]] || [[ `git rev-parse --git-dir > /dev/null 2>&1; echo $?` -eq 0 ]]"
+format = " on $output"
