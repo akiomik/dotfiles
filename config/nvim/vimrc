@@ -99,6 +99,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mesonbuild/meson', {'do': 'cp -R data/syntax-highlighting/vim/* .'}
   Plug 'cespare/vim-toml', {'for': 'toml'}
   Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
+  Plug 'hashivim/vim-terraform', {'for': 'terraform'}
+  au BufNewFile,BufReadPost *.tftpl setl filetype=json
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
