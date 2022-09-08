@@ -115,8 +115,10 @@ call plug#begin('~/.vim/plugged')
     \ 'typescript': ['prettier'],
     \ 'vue': ['eslint'],
     \ 'ruby': ['rubocop'],
+    \ 'python': ['black', 'isort'],
   \ }
   let g:ale_linters = {
+    \ 'go': ['gofmt'],
     \ 'scala': ['metals'],
     \ 'python': ['flake8', 'mypy'],
     \ 'ruby': ['rubocop'],
