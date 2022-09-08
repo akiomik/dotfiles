@@ -105,6 +105,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'hashivim/vim-terraform', {'for': 'terraform'}
   au BufNewFile,BufReadPost *.tftpl setl filetype=json
   Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascriptreact' }
+  au BufNewFile,BufReadPost Dockerfile-* setl filetype=Dockerfile
+  au BufNewFile,BufReadPost Dockerfile-*.dockerignore setl filetype=conf
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
