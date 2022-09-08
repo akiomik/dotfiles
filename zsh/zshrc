@@ -137,9 +137,7 @@ function urlencode { node -p "encodeURIComponent('$1')" }
 # {{{ prompt
 eval "$(starship init zsh)"
 
-setopt prompt_subst
 SPROMPT="%F{magenta}correct: %R -> %r [n/y/a/e]? %f"
-RPROMPT='$(git branch-status --mode zsh)'
 # }}}
 
 
