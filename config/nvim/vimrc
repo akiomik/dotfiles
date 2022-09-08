@@ -72,6 +72,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
   Plug 'rodjek/vim-puppet', {'for': 'puppet'}
   Plug 'hhvm/vim-hack', {'for': 'php'}
+  Plug 'pocke/rbs.vim', {'for': 'rbs'}
+  au BufNewFile,BufReadPost Steepfile setl filetype=ruby
   au BufNewFile,BufReadPost Routefile setl filetype=ruby
   au BufNewFile,BufReadPost *.ruby setl filetype=ruby
   au BufNewFile,BufReadPost *.json.jb setl filetype=ruby
