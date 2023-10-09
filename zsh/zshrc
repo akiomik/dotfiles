@@ -9,7 +9,7 @@
 #####################
 # {{{ homebrew
 # TODO: macosに依存しないようにしたい
-eval "$(/opt/homebrew/bin/brew shellenv)" # for m1
+eval "$(brew shellenv)" # for m1
 BREW_PREFIX=$(brew --prefix) # homebrewの挙動を変えないためにHOMEBREW_PREFIXは使わない
 # }}}
 
