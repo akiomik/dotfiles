@@ -129,6 +129,7 @@ call plug#begin('~/.vim/plugged')
     \ 'scala': ['metals'],
     \ 'python': ['flake8', 'mypy'],
     \ 'ruby': ['rubocop'],
+    \ 'elixir': ['credo', 'dialyxir', 'dogma', 'elixir-ls', 'mix'],
   \ }
   let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
   let g:ale_lint_on_text_changed = 1
