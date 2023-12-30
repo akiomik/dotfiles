@@ -122,6 +122,7 @@ call plug#begin('~/.vim/plugged')
     \ 'vue': ['eslint'],
     \ 'ruby': ['rubocop'],
     \ 'python': ['black', 'isort'],
+    \ 'rust': ['rustfmt'],
   \ }
   let g:ale_linters = {
     \ 'go': ['gofmt'],
