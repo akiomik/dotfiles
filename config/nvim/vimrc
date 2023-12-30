@@ -440,15 +440,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tcomment_vim'
   " }}}
 
-
-  " vimshell
-  " {{{ vimshell
-  Plug 'Shougo/vimshell'
-  command! Scala :VimShellInteractive scala
-  command! Sbt :VimShellInteractive sbt
-  " }}}
-
-
   " indent
   " {{{ indent
   Plug 'nathanaelkane/vim-indent-guides'
