@@ -27,7 +27,7 @@
   prune = true
 [alias]
   br = branch
-  ci = commit -a
+  ci = commit -s
   co = checkout
   st = status
   su = submodule update
