@@ -137,21 +137,6 @@ call plug#begin('~/.vim/plugged')
   let g:ale_fix_on_save = 1
   let g:ale_ruby_rubocop_options = '-a'
 
-  " Plug 'scrooloose/syntastic'
-  let g:syntastic_haskell_checkers = ['hdevtools']
-  " set statusline+=%#warningmsg#
-  " set statusline+=%{SyntasticStatuslineFlag()}
-  " set statusline+=%*
-  " let g:syntastic_always_populate_loc_list = 1
-  " let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
-
-  " sub checker for haskell
-  " NOTE: ghc-mod is longer supported at syntastic
-  Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
-
   " laungage server protocols support
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile', 'for': 'scala'}
