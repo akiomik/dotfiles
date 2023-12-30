@@ -79,7 +79,7 @@ alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
 alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
-alias rg='rg --hidden'
+alias rg='rg --hidden --sort path'
 
 # scala
 SCALA_REPL_HISTORY="$HOME/.history/scala_history"
