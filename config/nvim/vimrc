@@ -130,6 +130,7 @@ call plug#begin('~/.vim/plugged')
     \ 'python': ['flake8', 'mypy'],
     \ 'ruby': ['rubocop'],
     \ 'elixir': ['credo', 'dialyxir', 'dogma', 'elixir-ls', 'mix'],
+    \ 'typescript': ['eslint', 'standard', 'tslint', 'tsserver', 'typecheck', 'xo'],
   \ }
   let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
   let g:ale_lint_on_text_changed = 1
