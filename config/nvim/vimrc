@@ -111,6 +111,7 @@ call plug#begin('~/.vim/plugged')
   au BufNewFile,BufReadPost *.tsv setl noet
   au BufNewFile,BufReadPost *.tsv setl ts=8
   Plug 'wuelnerdotexe/vim-astro'
+  Plug 'gleam-lang/gleam.vim'
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
