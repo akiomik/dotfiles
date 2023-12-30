@@ -107,6 +107,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascriptreact' }
   au BufNewFile,BufReadPost Dockerfile-* setl filetype=Dockerfile
   au BufNewFile,BufReadPost Dockerfile-*.dockerignore setl filetype=conf
+  Plug 'mechatroner/rainbow_csv'
+  au BufNewFile,BufReadPost *.tsv setl noet
+  au BufNewFile,BufReadPost *.tsv setl ts=8
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
