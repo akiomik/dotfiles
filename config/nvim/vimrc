@@ -150,6 +150,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile', 'for': 'scala'}
   Plug 'neoclide/coc-solargraph', {'for': 'ruby'}
+  Plug 'neoclide/coc-tsserver'
+  Plug 'elixir-lsp/coc-elixir'
   " }}}
 
   " coc settings for scala (metals)
