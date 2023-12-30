@@ -37,7 +37,6 @@ if has("autocmd")
 endif
 " }}}
 
-
 " keymaps
 " {{{ keymaps
 if &diff
@@ -50,7 +49,6 @@ endif
 map <F5> :e!<CR>
 " }}}
 
-
 " plugins
 " {{{ plugins
 call plug#begin('~/.vim/plugged')
@@ -60,7 +58,6 @@ call plug#begin('~/.vim/plugged')
 
   " encoding
   "source $VIM/encode.vim
-
 
   " syntax & format
   " {{{ syntax & format
@@ -301,13 +298,11 @@ call plug#begin('~/.vim/plugged')
   nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
   " }}}
 
-
   " colorscheme
   " {{{ colorscheme
   Plug 'w0ng/vim-hybrid'
   Plug 'cocopon/lightline-hybrid.vim'
   " }}}
-
 
   " powerline
   " {{{ powerline
@@ -347,7 +342,6 @@ call plug#begin('~/.vim/plugged')
     \ },
   \ }
 
-
   " {{{ CtrlPMark()
   function! CtrlPMark()
     if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
@@ -384,7 +378,6 @@ call plug#begin('~/.vim/plugged')
   se nosmd
   " }}}
 
-
   " filer
   " {{{ filer
   Plug 'scrooloose/nerdtree'
@@ -413,7 +406,6 @@ call plug#begin('~/.vim/plugged')
   set wildignore+=*/dist/*,*/node_modules/*,*/target/*
   " }}}
 
-
   " tab
   " {{{ tab
   set showtabline=2 " 常にタブラインを表示
@@ -433,7 +425,6 @@ call plug#begin('~/.vim/plugged')
   map <silent> [Tag]n :tabnext<CR>
   map <silent> [Tag]p :tabprevious<CR>
   " }}}
-
 
   " formatter
   " {{{ formatter
@@ -470,7 +461,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
   " }}}
 
-
   " tagbar
   " {{{ tagbar
   Plug 'majutsushi/tagbar'
@@ -492,19 +482,16 @@ call plug#begin('~/.vim/plugged')
   endif
   " }}}
 
-
   " text objects
   " {{{
   Plug 'tpope/vim-surround'
   " }}}
-
 
   " motions
   " {{{ motions
   Plug 'Lokaltog/vim-easymotion'
   Plug 'kana/vim-smartword'
   " }}}
-
 
   " multiple cursor
   Plug 'terryma/vim-multiple-cursors'
@@ -520,11 +507,9 @@ call plug#begin('~/.vim/plugged')
     endif
   endfunction
 
-
   " %s highlight
   Plug 'osyo-manga/vim-over'
   map <C-s> :OverCommandLine<CR>
-
 
   " git
   " {{{ git
@@ -532,14 +517,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive' " for lightline
   " }}}
 
-
   " EditorConfig
   Plug 'editorconfig/editorconfig-vim'
 
-
 call plug#end()
 " }}}
-
 
 " colorscheme
 " {{{ colorscheme
@@ -549,7 +531,6 @@ let g:hybrid_custom_term_colors = 1
 " let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 colorscheme hybrid
 " }}}
-
 
 " completion
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
