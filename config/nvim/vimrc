@@ -469,6 +469,8 @@ call plug#begin('~/.vim/plugged')
   " motions
   " {{{ motions
   Plug 'Lokaltog/vim-easymotion'
+  nmap <Leader><Leader>/ <Plug>(easymotion-sn)
+
   Plug 'kana/vim-smartword'
   " }}}
 
