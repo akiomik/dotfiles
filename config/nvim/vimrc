@@ -110,6 +110,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'wuelnerdotexe/vim-astro'
   Plug 'gleam-lang/gleam.vim'
   Plug 'elixir-editors/vim-elixir'
+  au BufNewFile,BufReadPost *.json5 setl filetype=jsonc
 
   " Plug 'dense-analysis/ale'
   Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
