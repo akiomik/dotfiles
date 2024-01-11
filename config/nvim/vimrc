@@ -472,6 +472,8 @@ call plug#begin('~/.vim/plugged')
   nmap <Leader><Leader>/ <Plug>(easymotion-sn)
 
   Plug 'kana/vim-smartword'
+  map w <Plug>(smartword-w)
+  map b <Plug>(smartword-b)
   " }}}
 
   " multiple cursor
