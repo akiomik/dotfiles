@@ -112,11 +112,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-editors/vim-elixir'
   au BufNewFile,BufReadPost *.json5 setl filetype=jsonc
 
-  " Plug 'dense-analysis/ale'
-  Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
+  Plug 'dense-analysis/ale'
+  " Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
   let g:ale_fixers = {
-    \ 'javascript': ['eslint'],
-    \ 'typescript': ['prettier'],
+    \ 'javascript': ['biome', 'eslint'],
+    \ 'typescript': ['biome', 'prettier'],
     \ 'vue': ['eslint'],
     \ 'ruby': ['rubocop'],
     \ 'python': ['black', 'isort'],
