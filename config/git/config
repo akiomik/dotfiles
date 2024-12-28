@@ -17,6 +17,7 @@
 [merge]
   ff = false
   tool = vimdiff
+  conflictstyle = zdiff3
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
 [pull]
