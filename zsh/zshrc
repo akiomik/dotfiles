@@ -58,7 +58,9 @@ export SBT_OPTS="$SBT_OPTS -Dfile.encoding=UTF-8"
 export SBT_OPTS="$SBT_OPTS -Xms1024m -Xmx1024m -XX:+CMSClassUnloadingEnabled"
 
 # haskell
-path=($(stack path --compiler-bin)(N-/) $path) # for hdevtools
+if which stack > /dev/null; then
+  path=($(stack path --compiler-bin)(N-/) $path) # for hdevtools
+fi
 
 # misc
 export ZPLUG_HOME="$BREW_PREFIX/opt/zplug"
