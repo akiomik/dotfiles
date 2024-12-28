@@ -116,6 +116,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'akiomik/ale', { 'branch': 'add-support-for-agda' }
   let g:ale_fixers = {
     \ 'javascript': ['biome', 'eslint'],
+    \ 'javascriptreact': ['biome', 'eslint'],
     \ 'typescript': ['biome', 'prettier'],
     \ 'vue': ['eslint'],
     \ 'ruby': ['rubocop'],
@@ -123,12 +124,14 @@ call plug#begin('~/.vim/plugged')
     \ 'rust': ['rustfmt'],
   \ }
   let g:ale_linters = {
+    \ 'javascript': ['biome', 'eslint'],
+    \ 'javascriptreact': ['biome', 'eslint'],
     \ 'go': ['gofmt'],
     \ 'scala': ['metals'],
     \ 'python': ['flake8', 'mypy'],
     \ 'ruby': ['rubocop'],
     \ 'elixir': ['credo', 'dialyxir', 'dogma', 'elixir-ls', 'mix'],
-    \ 'typescript': ['eslint', 'standard', 'tslint', 'tsserver', 'typecheck', 'xo'],
+    \ 'typescript': ['biome', 'eslint', 'tslint', 'tsserver', 'typecheck', 'xo'],
   \ }
   let g:ale_pattern_options = { '\.sbt$': {'ale_linters': [], 'ale_fixers': []} }
   let g:ale_lint_on_text_changed = 1
@@ -141,6 +144,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc-solargraph', {'for': 'ruby'}
   Plug 'neoclide/coc-tsserver'
   Plug 'elixir-lsp/coc-elixir'
+  Plug 'fannheyward/coc-biome'
   " }}}
 
   " coc settings for scala (metals)
