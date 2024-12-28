@@ -306,6 +306,8 @@ call plug#begin('~/.vim/plugged')
 
   " colorscheme
   " {{{ colorscheme
+  " overwrite ctermfg for `Comment`
+  autocmd ColorScheme * highlight Comment ctermfg=242 guifg=#707880
   Plug 'w0ng/vim-hybrid'
   Plug 'cocopon/lightline-hybrid.vim'
   " }}}
