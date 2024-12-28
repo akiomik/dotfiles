@@ -9,6 +9,7 @@ path=( \
   $BREW_PREFIX/opt/icu4c/bin(N-/) \
   $BREW_PREFIX/opt/icu4c/sbin(N-/) \
   $BREW_PREFIX/sbin(N-/) \
+  $BREW_PREFIX/opt/postgresql@15/bin(N-/) \
   $path \
 )
 
@@ -18,6 +19,8 @@ fpath=( \
   $BREW_PREFIX/share/zsh/functions(N-/) \
   $fpath \
 )
+
+export INCLUDE=$BREW_PREFIX/include:$INCLUDE
 # }}}
 
 
