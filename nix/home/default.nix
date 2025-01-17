@@ -1,8 +1,9 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
+  self,
   # inputs,
-  outputs,
+  # outputs,
   # lib,
   # config,
   # pkgs,
@@ -18,6 +19,9 @@
   ];
 
   nixpkgs = {
+    # The platform the configuration will be used on.
+    hostPlatform = "aarch64-darwin";
+
     # You can add overlays here
     overlays = [
       # You can also add overlays exported from other flakes:
@@ -37,22 +41,31 @@
     };
   };
 
-  home = {
-    username = "akiomi";
-    homeDirectory = "/Users/akiomi"; # TODO: Linux support
+  system = {
+    # Set Git commit hash for darwin-version.
+    configurationRevision = self.rev or self.dirtyRev or null;
+
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
+    stateVersion = 5;
   };
 
+  # Necessary for using flakes on this system.
+  nix.settings.experimental-features = "nix-command flakes";
+
+  # List packages installed in system profile. To search by name, run:
+  # $ nix-env -qaP | grep wget
+  # environment.systemPackages =
+  #   [
+  #     pkgs.vim
+  #   ];
+
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  homebrew = {
+    enable = true;
+    taps = [];
+    brews = [];
+    casks = [];
+    masApps = [];
+  };
 }
