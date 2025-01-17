@@ -45,10 +45,9 @@
     };
   };
 
-  # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "akiomi";
+    homeDirectory = "/Users/akiomi"; # TODO: Linux support
   };
 
   # Add stuff for your user as you see fit:
