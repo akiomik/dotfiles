@@ -37,14 +37,16 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
+    overlays = import ./overlays { inherit inputs; };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#akiomi@trinculo'
     homeConfigurations = {
       "akiomi@trinculo" = home-manager.lib.homeManagerConfiguration {
+        # NOTE: home-manager does not support per-system configulation
+        #       https://github.com/nix-community/home-manager/issues/3075
         pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = { inherit inputs outputs; };
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
