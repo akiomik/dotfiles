@@ -41,9 +41,6 @@
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
-    # Reusable home-manager modules you might want to export
-    # These are usually stuff you would upstream into home-manager
-    homeManagerModules = import ./modules/home-manager;
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#akiomi@trinculo'
