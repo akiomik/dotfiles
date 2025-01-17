@@ -7,7 +7,6 @@
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -35,9 +34,6 @@
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays { inherit inputs; };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#akiomi@trinculo'
