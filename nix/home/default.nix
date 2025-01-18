@@ -60,12 +60,6 @@
   #     pkgs.vim
   #   ];
 
-  # Add stuff for your user as you see fit:
-  homebrew = {
-    enable = true;
-    taps = [];
-    brews = [];
-    casks = [];
-    masApps = [];
-  };
+  # Add homebrew formulae for your user as you see fit:
+  homebrew = import ./homebrew.nix;
 }
