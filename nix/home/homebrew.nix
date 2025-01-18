@@ -3,9 +3,112 @@
 {
   enable = true;
 
-  taps = [];
+  taps = [
+    "auth0/auth0-cli" # auth0
+    "homebrew/test-bot" # brew test-bot
+    "kayac/tap" # ecspresso
+  ];
 
-  brews = [];
+  brews = [
+    # File Format
+    "brotli"
+    "snappy"
+    "webp"
+    "zstd"
+
+    # Editor
+    "emacs" # for agda
+    "neovim"
+
+    # Language
+    "agda"
+    "mise"
+    "rustup"
+
+    # Language server
+    "elixir-ls"
+    "solargraph"
+
+    # Package Manager
+    "cocoapods"
+    "poetry"
+    "rye"
+    "yarn"
+
+    # Build Tool
+    "just"
+    "make"
+    "sccache"
+    "wasm-pack"
+
+    # Linter & Formatter
+    "actionlint"
+    "biome"
+    "ruff"
+    "shfmt"
+    "staticcheck"
+    "tflint"
+    "typos-cli"
+
+    # Git
+    "aicommits"
+    "gh"
+    "ghq"
+    "gibo"
+    "git"
+    "git-delta"
+    "git-lfs"
+
+    # AWS
+    "awscli"
+    "copilot"
+    "ecspresso"
+
+    # SaaS
+    "auth0"
+
+    # Container
+    "docker"
+    "docker-completion"
+
+    # Performance
+    "htop"
+    "hyperfine"
+    "k6"
+
+    # Audio & Video
+    "ffmpeg"
+    "flac"
+
+    # Image
+    "imagemagick"
+
+    # Utility
+    "coreutils"
+    "gnu-sed"
+    "gnupg"
+    "jq"
+    "peco"
+    "ripgrep"
+    "tree"
+
+    # Network Tools
+    "curl"
+    "websocat"
+    "wget"
+
+    # Terminal
+    "tmux"
+
+    # Database
+    "postgresql@15"
+    "redis"
+
+    # Shell
+    "starship"
+    "zplug"
+    "zsh-syntax-highlighting"
+  ];
 
   casks = [
     # 📕Books
