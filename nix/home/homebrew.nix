@@ -81,6 +81,7 @@
     # Audio & Video
     "ffmpeg"
     "flac"
+    "yt-dlp"
 
     # Image
     "imagemagick"
