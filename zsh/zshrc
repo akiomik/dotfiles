@@ -30,6 +30,7 @@ path=( \
 
 fpath=( \
   $ZDOTDIR/completion(N-/) \
+  $HOME/.docker/completions(N-/) \
   $fpath \
 )
 
