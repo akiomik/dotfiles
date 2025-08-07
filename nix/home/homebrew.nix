@@ -7,6 +7,7 @@
     "auth0/auth0-cli" # auth0
     "homebrew/test-bot" # brew test-bot
     "kayac/tap" # ecspresso
+    "atlassian/homebrew-acli" # acli
   ];
 
   brews = [
@@ -27,6 +28,7 @@
 
     # Language server
     "elixir-ls"
+    "ruby-lsp"
     "solargraph"
 
     # Package Manager
@@ -87,6 +89,8 @@
     "imagemagick"
 
     # Utility
+    "age"
+    "acli"
     "coreutils"
     "gnu-sed"
     "gnupg"
@@ -159,7 +163,6 @@
     "figma"
 
     # 🚲Health & Fitness
-    "garmin-express"
 
     # 🎈Kids
 
@@ -177,7 +180,7 @@
     "ilok-license-manager"
     "izotope-product-portal"
     "musescore"
-    "spotify"
+    "native-access"
     "sysex-librarian"
 
     # 🧭Navigation
@@ -191,7 +194,9 @@
     "obs"
 
     # 🚀Productivity
+    "bitwarden"
     "chatgpt"
+    "claude"
     "cloudflare-warp"
     "deepl"
     "dropbox"
@@ -202,6 +207,7 @@
     "raycast"
     "rectangle"
     "todoist"
+    "todoist-app"
     "tor-browser"
 
     # 👀Reference
