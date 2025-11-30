@@ -24,6 +24,7 @@
     # Language
     "agda"
     "mise"
+    "odin"
     "rustup"
 
     # Language server
@@ -34,8 +35,6 @@
     # Package Manager
     "cocoapods"
     "mas"
-    "poetry"
-    "rye"
     "uv"
     "yarn"
 
@@ -55,7 +54,6 @@
     "typos-cli"
 
     # Git
-    "aicommits"
     "gh"
     "ghq"
     "gibo"
@@ -97,6 +95,7 @@
     "jq"
     "peco"
     "ripgrep"
+    "trivy"
     "tree"
 
     # Network Tools
@@ -132,6 +131,7 @@
     "docker"
     "hex-fiend"
     "intellij-idea-ce"
+    "kiro"
     "leapp"
     "ngrok"
     "proxyman"
@@ -173,10 +173,12 @@
     # 🩺Medical
 
     # 🎵Music
+    "arturia-software-center"
     "audacity"
     "blackhole-2ch"
     "elektron-overbridge"
     "elektron-transfer"
+    "ik-product-manager"
     "ilok-license-manager"
     "izotope-product-portal"
     "musescore"
@@ -206,8 +208,7 @@
     "notion"
     "raycast"
     "rectangle"
-    "todoist"
-    "todoist-app"
+    "synologyassistant"
     "tor-browser"
 
     # 👀Reference
@@ -244,6 +245,7 @@
   # https://github.com/mas-cli/mas
   masApps = {
     ADGUARD_FOR_SAFARI = 1440147259;
+    BITWARDEN = 1352778147;
     GARAGEBAND = 682658836;
     # HAYAEMON = 717639970;
     IMOVIE = 408981434;
@@ -254,7 +256,7 @@
     NUMBERS = 409203825;
     PAGES = 409201541;
     SAVE_TO_RAINDROP = 1549370672;
+    SLACK = 803453959;
     TAILSCALE = 1475387142;
-    WAPPALYZER = 1520333300;
   };
 }
