@@ -4,9 +4,9 @@
   enable = true;
 
   taps = [
-    "auth0/auth0-cli" # auth0
-    "homebrew/test-bot" # brew test-bot
-    "kayac/tap" # ecspresso
+    "akiomik/dev"             # safe-chain
+    "homebrew/test-bot"       # brew test-bot
+    "kayac/tap"               # ecspresso
     "atlassian/homebrew-acli" # acli
   ];
 
@@ -67,7 +67,7 @@
     "ecspresso"
 
     # SaaS
-    "auth0"
+    "acli"
 
     # Container
     "docker"
@@ -87,15 +87,12 @@
     "imagemagick"
 
     # Utility
-    "age"
-    "acli"
     "coreutils"
     "gnu-sed"
     "gnupg"
     "jq"
     "peco"
     "ripgrep"
-    "trivy"
     "tree"
 
     # Network Tools
@@ -114,6 +111,15 @@
     "starship"
     "zplug"
     "zsh-syntax-highlighting"
+
+    # Security
+    "age"
+    "safe-chain"
+    "trivy"
+
+    # AI
+    "aider"
+    "ollama"
   ];
 
   casks = [
@@ -199,6 +205,7 @@
     "bitwarden"
     "chatgpt"
     "claude"
+    "claude-code"
     "cloudflare-warp"
     "deepl"
     "dropbox"
