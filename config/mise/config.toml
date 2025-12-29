@@ -1,0 +1,4 @@
+[tools]
+go = "1.25"
+node = "latest"
+ruby = "3.4"
