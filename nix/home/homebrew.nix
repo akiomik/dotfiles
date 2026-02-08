@@ -40,7 +40,10 @@
 
     # Build Tool
     "just"
+    "llvm" # incl. clang-format and clang-tidy
     "make"
+    "meson"
+    "ninja"
     "sccache"
     "wasm-pack"
 
@@ -70,6 +73,7 @@
     "acli"
 
     # Container
+    "container"
     "docker"
     "docker-completion"
 
@@ -93,6 +97,7 @@
     "jq"
     "peco"
     "ripgrep"
+    "tokei"
     "tree"
 
     # Network Tools
@@ -215,6 +220,7 @@
     "notion"
     "raycast"
     "rectangle"
+    "rustdesk"
     "synologyassistant"
     "tor-browser"
 
