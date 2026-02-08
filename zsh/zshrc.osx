@@ -10,6 +10,7 @@ path=( \
   $BREW_PREFIX/opt/icu4c/sbin(N-/) \
   $BREW_PREFIX/sbin(N-/) \
   $BREW_PREFIX/opt/postgresql@15/bin(N-/) \
+  $BREW_PREFIX/opt/llvm/bin(N-/) \
   /Applications/Keybase.app/Contents/SharedSupport/bin(N-/) \
   $path \
 )
