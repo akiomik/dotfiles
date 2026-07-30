@@ -44,6 +44,7 @@
     "make"
     "meson"
     "ninja"
+    "rgbds" # disasm for DMG(GB)
     "sccache"
     "wasm-pack"
 
@@ -73,14 +74,17 @@
     "acli"
 
     # Container
+    "colima"
     "container"
     "docker"
     "docker-completion"
+    "docker-compose"
 
     # Performance
     "htop"
     "hyperfine"
     "k6"
+    "samply"
 
     # Audio & Video
     "ffmpeg"
@@ -92,11 +96,13 @@
 
     # Utility
     "coreutils"
+    "fdupes"
     "gnu-sed"
     "gnupg"
     "jq"
     "peco"
     "ripgrep"
+    "sd"
     "tokei"
     "tree"
 
@@ -107,6 +113,7 @@
 
     # Terminal
     "tmux"
+    "tpm"
 
     # Database
     "postgresql@15"
@@ -123,8 +130,9 @@
     "trivy"
 
     # AI
-    "aider"
     "ollama"
+    "opencode"
+    "rtk"
   ];
 
   casks = [
@@ -212,6 +220,8 @@
     "claude"
     "claude-code"
     "cloudflare-warp"
+    "codex"
+    "codex-app"
     "deepl"
     "dropbox"
     "firefox"
