@@ -23,6 +23,10 @@ fpath=( \
 )
 
 export INCLUDE=$BREW_PREFIX/include:$INCLUDE
+export DYLD_LIBRARY_PATH=$BREW_PREFIX/lib:$DYLD_LIBRARY_PATH
+
+# for qjackctl
+export QT_PLUGIN_PATH=$BREW_PREFIX/opt/qtbase/share/qt/plugins:$QT_PLUGIN_PATH
 # }}}
 
 
