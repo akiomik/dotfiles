@@ -1,4 +1,4 @@
 [tools]
 go = "1.25"
-node = "24"
+node = "26"
 ruby = "3.4"
